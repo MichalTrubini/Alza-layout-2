@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap");
 
+body {
+  margin: 0;
+}
+
 #celek * {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
@@ -9,7 +13,7 @@
 
 #celek p {
   font-weight: 400;
-  color: #535252;
+  color: #313131;
   font-family: "Ubuntu", sans-serif;
 }
 
@@ -19,59 +23,70 @@ h3 {
   font-weight: 700;
 }
 
+.layout-1 #celek .container {
+  padding-left: 58px;
+  padding-right: 58px;
+}
+
+.layout-1 #celek {
+  width: 100%;
+  max-width: 1250px;
+  margin: auto;
+}
+
+#celek .hr-between-blocks {
+  height: 8px;
+  border: none;
+  background: rgb(229, 0, 64);
+  background: linear-gradient(90deg, rgba(229, 0, 64, 1) 0%, rgba(115, 0, 38, 1) 100%);
+}
+
 /*BLOCK 1*/
 
-#celek .block-1 .row-wrapper {
+.layout-1 #celek .block-1 .row-wrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 89px;
 }
 
-.mobile #celek .block-1 .row-wrapper {
-  flex-direction: column;
-}
-
-#celek .block-1 {
+.layout-1 #celek .block-1 {
   display: flex;
   flex-direction: column;
   gap: 90px;
-  padding: 99px 58px;
+  padding-top: 99px;
+  padding-bottom: 99px;
 }
 
-#celek .benefit-component,
-#celek .benefit-component-clear {
+.layout-1 #celek .benefit-component,
+.layout-1 #celek .benefit-component-clear {
   width: 100%;
 }
 
-#celek .benefit-component {
+.layout-1 #celek .benefit-component {
   padding: 63px 22px 51px;
   text-align: center;
 }
 
-#celek .benefit-component__imageContainer {
+.layout-1 #celek .benefit-component__imageContainer {
   position: relative;
 }
 
-#celek .block-1 .circle-bg {
+.layout-1 #celek .block-1 .circle-bg {
   position: absolute;
   z-index: 5;
   left: 51%;
   transform: translateX(-49%);
 }
 
-#celek .block-1 .circle {
+.layout-1 #celek .block-1 .circle {
   position: absolute;
   z-index: 5;
   left: 51%;
   transform: translateX(-52%);
 }
 
-.mobile #celek .block-1 .circle {
-  width: 120px;
-}
-
-#celek .circle-special {
+.layout-1 #celek .circle-special {
   top: -87px;
   width: 130px;
   position: absolute;
@@ -80,56 +95,43 @@ h3 {
   transform: translateX(-51%);
 }
 
-#celek .block-1 .circle {
+.layout-1 #celek .block-1 .circle {
   top: -93px;
   width: 130px;
 }
 
-#celek .block-1 .circle-bg {
+.layout-1 #celek .block-1 .circle-bg {
   width: 235px;
   top: -140px;
 }
 
-.mobile #celek .block-1 .circle-bg {
-  width: 200px;
-  height: 200px;
-}
-#celek .block-1 .benefity-image {
+.layout-1 #celek .block-1 .benefity-image {
   width: 80%;
   position: relative;
   right: -40px;
 }
 
-.mobile #celek .block-1 .benefity-image {
-  width: 100%;
-  height: auto;
-  margin-bottom: -420px;
-  position: relative;
-  bottom: 350px;
-  z-index: -1;
-}
-
-#celek .big-heading-wrapper__heading {
+.layout-1 #celek .big-heading-wrapper__heading {
   font-size: 50px;
   line-height: 60px;
   font-weight: 600;
 }
 
-#celek .block-1 .big-heading-wrapper {
+.layout-1 #celek .block-1 .big-heading-wrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-#celek .block-1 .benefit-component {
-  background-image: linear-gradient(to right bottom, #ffffff, #f6f6f6, #ededed, #e5e5e5, #dcdcdc);
+.layout-1 #celek .block-1 .benefit-component {
+  background-image: linear-gradient(295deg, #e9e9e9 0%, #ffffff 100%);
   box-shadow: 0px 5px 20px #00000059;
   border: 1px solid #ffffff;
   position: relative;
   z-index: 99;
 }
 
-#celek .block-1 .benefit-component-line {
+.layout-1 #celek .block-1 .benefit-component-line {
   width: 100%;
   z-index: 1;
   height: 4px;
@@ -144,22 +146,17 @@ h3 {
   margin-bottom: 54px;
 }
 
-#celek .block-1 .header-for-benefit-component {
+.layout-1 #celek .block-1 .header-for-benefit-component {
   font-size: 26px;
   line-height: 32px;
   margin-bottom: 12px;
 }
 
-.mobile #celek .block-1 .header-for-benefit-component {
-  font-size: 20px;
-  line-height: 30px;
+.layout-1 #celek .block-1 .header-for-benefit-component--mgFix {
+  margin-bottom: 5px;
 }
 
-#celek .block-1 .header-for-benefit-component--mgFix {
-    margin-bottom: 5px;
-}
-
-#celek .block-1 .text-for-benefit-component {
+.layout-1 #celek .block-1 .text-for-benefit-component {
   font-size: 18px;
   line-height: 26px;
   color: #313131;
@@ -167,12 +164,7 @@ h3 {
   padding: 0 40px;
 }
 
-.mobile #celek .block-1 .text-for-benefit-component {
-  font-size: 16px;
-  line-height: 24px;
-}
-
-#celek .block-1 .benefit-component-button {
+.layout-1 #celek .block-1 .benefit-component-button {
   background-color: #e3004a;
   box-shadow: 0px 10px 20px #0000004d;
   border: 1px solid #ffffff;
@@ -185,256 +177,217 @@ h3 {
   white-space: nowrap;
 }
 
-#celek .benefit-component-button__text {
+.layout-1 #celek .benefit-component-button__text {
   font-size: 18px;
   color: white;
   font-weight: 700;
   text-shadow: 0px 15px 40px #00000033;
 }
 
-#celek .block-1 .secondary-text-for-benefit-component {
-    color: #00000033;
-    font-size: 16px;
-    line-height: 26px;
-  }
-
-#celek .text-for-benefit-component-special__container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 9px;
+.layout-1 #celek .block-1 .secondary-text-for-benefit-component {
+  color: #00000033;
+  font-size: 16px;
+  line-height: 26px;
 }
 
-#celek .block-1 .text-for-benefit-component-special {
-    font-size: 20px;
+.layout-1 #celek .text-for-benefit-component-special__container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  align-items: center;
+  margin-top: 9px;
+}
+
+.layout-1 #celek .block-1 .text-for-benefit-component-special {
+  font-size: 20px;
+  font-weight: 500;
+  text-decoration: underline;
+}
+
+.layout-1 #celek .benefits-block-image {
+  width: 35%;
+}
+
+.layout-1 #celek .params-ul {
+  width: 70%;
+}
+
+@media screen and (max-width: 975px) {
+  .layout-0 #celek .container {
+    padding-left: 39px;
+    padding-right: 39px;
   }
-  
+
+  .layout-0 #celek .block-1 {
+    display: flex;
+    flex-direction: column;
+    gap: 90px;
+    padding-top: 79px;
+  }
+  .layout-0 #celek .block-1 .benefity-image {
+    width: 100%;
+    position: relative;
+    z-index: 2;
+    right: 21px;
+  }
+  .layout-0 #celek .big-heading-wrapper__heading {
+    font-size: 40px;
+    line-height: 50px;
+    position: relative;
+    z-index: 5;
+  }
+
+  .layout-0 #celek .block-1 .header-for-benefit-component {
+    font-size: 24px;
+    line-height: 30px;
+  }
+
+  .layout-0 #celek .block-1 .text-for-benefit-component {
+    font-size: 16px;
+    line-height: 24px;
+    padding: 0 20px;
+  }
+
+  .layout-0 #celek .block-1 .secondary-text-for-benefit-component {
+    line-height: 20px;
+  }
+
+  .layout-0 #celek .block-1 .text-for-benefit-component-special {
+    font-size: 18px;
+  }
+
+  .layout-0 #celek .block-1 .row-wrapper {
+    gap: 76px;
+  }
+
+  .layout-0 #celek {
+    max-width: 975px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .mobile #celek {
+    width: 100%;
+  }
+
+  .mobile #celek .container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .mobile #celek .block-1 {
+    flex-direction: column;
+    gap: 92px;
+    padding-top: 32px;
+    padding-bottom: 68px;
+  }
+
+  .mobile #celek .block-1 .big-heading-wrapper {
+    flex-direction: column;
+  }
+
+  .mobile #celek .big-heading-wrapper__heading {
+    font-size: 32px;
+    line-height: 40px;
+  }
+
+  .mobile #celek .benefit-component {
+    padding: 45px 17px;
+  }
+  .mobile #celek .block-1 .row-wrapper {
+    flex-direction: column;
+    gap: 92px;
+  }
+
+  .mobile #celek .block-1 .benefity-image {
+    left: 10px;
+  }
+  .mobile #celek .block-1 .header-for-benefit-component {
+    font-size: 20px;
+    line-height: 30px;
+    letter-spacing: -0.8px;
+  }
+  .mobile #celek .block-1 .text-for-benefit-component {
+    font-size: 16px;
+    line-height: 24px;
+    padding: 0;
+  }
+
+  .mobile #celek .benefit-component-button__text {
+    font-size: 16px;
+  }
+
+  .mobile #celek .block-1 .benefit-component-button {
+    padding: 17px 27px;
+  }
+
+  .mobile #celek .block-1 .circle-bg {
+    width: 210px;
+    top: -125px;
+  }
+
+  .mobile #celek .block-1 .circle {
+    top: -83px;
+    width: 120px;
+  }
+
+  .mobile #celek .circle-special {
+    top: -81px;
+    width: 124px;
+  }
+
+  .mobile #celek .block-1 .text-for-benefit-component-special {
+    font-size: 16px;
+  }
+
+  .mobile #celek .text-for-benefit-component-special__container {
+    gap: 15px;
+  }
+
+  .mobile #celek .block-1 .row-wrapper--first {
+    gap: 14px;
+  }
+}
+
 /*BLOCK 2*/
 
-.layout-1 #celek {
-  width: 100%;
-  max-width: 1250px;
-  margin: 0px auto;
-}
-.layout-0 #celek {
-  width: 100%;
-  max-width: 975px;
-  margin: 0px auto;
-}
-.mobile #celek {
-  width: 100%;
-  max-width: 100%;
-}
-
-#celek .hr-between-blocks {
-  height: 8px;
-  border: none;
-  background: rgb(229, 0, 64);
-  background: linear-gradient(90deg, rgba(229, 0, 64, 1) 0%, rgba(115, 0, 38, 1) 100%);
-}
-
-.layout-1 #celek .hr-between-blocks {
-  height: 8px;
-  border: none;
-  background: rgb(229, 0, 64);
-  background: linear-gradient(90deg, rgba(229, 0, 64, 1) 0%, rgba(115, 0, 38, 1) 100%);
-}
-
-.mobile #celek .hr-between-blocks {
-  height: 8px;
-  border: none;
-  background: rgb(229, 0, 64);
-  background: linear-gradient(90deg, rgba(229, 0, 64, 1) 0%, rgba(115, 0, 38, 1) 100%);
-}
-
-.mobile #celek .last-wrapper :last-child {
-  margin-bottom: -32px;
-  position: relative;
-  bottom: 100px;
-}
-
-
-
-.layout-1 #celek .block-2 .sencor-brand {
-  margin-left: 3.5px;
-}
-
-.layout-0 #celek .block-2 .sencor-brand {
-  margin-left: 3.5px;
-}
-
-.mobile #celek .block-2 .sencor-brand {
-  margin-top: 48px;
+.layout-1 #celek .block-2 {
+  padding-top: 108px;
+  padding-bottom: 83px;
 }
 
 .layout-1 #celek .block-2 .heading {
-  margin-left: 0;
-  font-family: "Nunito", sans-serif;
   margin-top: 26.67px;
   font-size: 33px;
-  font-weight: bold;
-  width: 680px;
-  height: 52px;
-}
-
-.layout-0 #celek .block-2 .heading {
-  margin-left: 0;
-  font-family: "Nunito", sans-serif;
-  margin-top: 26.67px;
-  font-size: 28px;
-  font-weight: bold;
-  width: 429px;
-  height: 73px;
-}
-
-.mobile #celek .block-2 .heading {
-  margin-left: 0;
-  font-family: "Nunito", sans-serif;
-  margin-top: 30.25px;
-  font-size: 26px;
-  line-height: 36px;
-  font-weight: bold;
-  width: 313px;
-  height: 65px;
+  line-height: 46px;
 }
 
 .layout-1 #celek .block-2 .block-2-text-wrapper {
-  margin-top: 108.5px;
-  margin-left: 55.5px;
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
-}
-
-.layout-0 #celek .block-2 .block-2-text-wrapper {
-  margin-top: 62px;
-  margin-left: 35.5px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
-.mobile #celek .block-2 .block-2-text-wrapper {
-  margin-left: 15px;
-  margin-right: 15px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  align-items: flex-end;
+  gap: 74px;
 }
 
 .layout-1 #celek .block-2 .block-2-text-wrapper-left {
   max-width: 63%;
-  margin: 0;
-}
-
-.layout-0 #celek .block-2 .block-2-text-wrapper-left {
-  max-width: 63%;
-  margin: 0;
-}
-
-.mobile #celek .block-2 .block-2-text-wrapper-left {
 }
 
 .layout-1 #celek .block-2 .block-2-text-wrapper-left .text {
   margin-top: 18px;
   font-size: 16px;
-  width: 714px;
-  height: 235px;
   line-height: 26px;
 }
 
-.layout-0 #celek .block-2 .block-2-text-wrapper-left .text {
-  margin-top: 23px;
-  font-size: 14px;
-  width: 536px;
-  height: 325px;
-  line-height: 26px;
-}
-
-.mobile #celek .block-2 .block-2-text-wrapper-left .text {
-  margin-top: 43px;
-  line-height: 26px;
-  font-size: 14px;
-}
-
-.layout-1 #celek .block-2 .block-2-text-wrapper-right {
-  margin: 0;
-}
-
-.layout-0 #celek .block-2 .block-2-text-wrapper-right {
-  margin: 0;
-}
-
-.mobile #celek .block-2 .block-2-text-wrapper-right {
-}
-
-.layout-1 #celek .block-2 .block-2-text-wrapper-right .block-2-image {
-  width: 287px;
-  height: 287px;
-  margin-right: 119.5px;
-  margin-top: 95.5px;
-}
-
-.layout-0 #celek .block-2 .block-2-text-wrapper-right .block-2-image {
-  width: 287px;
-  height: 287px;
-  margin-right: 55.5px;
-  margin-top: 169.5px;
-}
-
-.mobile #celek .block-2 .block-2-text-wrapper-right .block-2-image {
-  width: 287px;
-  height: 287px;
-  margin-top: 44px;
+.layout-1 #celek .block-2 .block-2-text-wrapper-right > img {
+  width: 75%;
 }
 
 .layout-1 #celek .block-2 .circles-wrapper {
-  margin-left: 55.5px;
-  margin-right: 61.5px;
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
-  margin-top: 90px;
-}
-
-.layout-0 #celek .block-2 .circles-wrapper {
-  margin-left: 35.5px;
-  margin-right: 35.5px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin-top: 52px;
-}
-
-.mobile #celek .block-2 .circles-wrapper {
-  margin-left: 0;
-  margin-right: 5px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  margin-top: 0;
-}
-
-.layout-1 #celek .gray-divider-special {
-  display: none;
-}
-
-.layout-1 #celek .gray-divider-special {
-  display: none;
-}
-
-.mobile #celek .gray-divider-special {
-  margin: 60px 0 0 0;
-  width: 100%;
-  height: 9px;
-  background-color: #e9e9e9;
-}
-
-.layout-1 #celek .block-2 .circles-wrapper .block-2-circle-image {
-  width: 240px;
-  height: 240px;
-  z-index: 2;
+  margin-top: 81px;
+  position: relative;
 }
 
 .layout-0 #celek .block-2 .circles-wrapper .block-2-circle-image {
@@ -443,307 +396,208 @@ h3 {
   z-index: 2;
 }
 
-.mobile #celek .block-2 .circles-wrapper .block-2-circle-image {
-  width: 200px;
-  height: 200px;
-  z-index: 2;
-  position: relative;
-  right: 20px;
-}
-
 .layout-1 #celek .block-2 .circles-wrapper .circle {
   display: flex;
   flex-direction: column;
-}
-
-.layout-0 #celek .block-2 .circles-wrapper .circle {
-  display: flex;
-  flex-direction: column;
-}
-
-.mobile #celek .block-2 .circles-wrapper .circle {
   align-items: center;
-  justify-content: center;
-  display: flex;
-  flex-direction: row;
+  width: 33%;
 }
 
 .layout-1 #celek .block-2 .circles-wrapper .circle-text {
   text-align: center;
   font-style: italic;
   font-weight: bold;
-  font-family: "Nunito", sans-serif;
   font-size: 18px;
   line-height: 26px;
+  padding: 0 40px;
 }
 
-.layout-0 #celek .block-2 .circles-wrapper .circle-text {
-  text-align: center;
-  font-style: italic;
-  font-weight: bold;
-  font-family: "Nunito", sans-serif;
-  font-size: 18px;
-  line-height: 26px;
-}
-
-.mobile #celek .block-2 .circles-wrapper .circle-text {
-  text-align: left;
-  font-style: italic;
-  font-weight: bold;
-  font-family: "Nunito", sans-serif;
-  font-size: 16px;
-  line-height: 26px;
-  position: relative;
-  right: 15px;
-  bottom: 10px;
-}
-
-.layout-1 #celek .gray-block-divider {
-  height: 4px;
+.layout-1 #celek .gray-divider-in-image {
+  height: 9px;
+  width: 100%;
   background-color: #e9e9e9;
-}
-
-.layout-0 #celek .gray-block-divider {
-  height: 4px;
-  background-color: #e9e9e9;
-}
-
-.mobile #celek .gray-block-divider {
-  height: 4px;
-  background-color: #e9e9e9;
+  position: absolute;
+  top: 97px;
 }
 
 .layout-1 #celek .gray-divider {
   margin-top: 31px;
-  margin-left: 55.5px;
-  margin-right: 61.5px;
   height: 9px;
   background-color: #e9e9e9;
 }
 
-.layout-0 #celek .gray-divider {
-  margin-top: 23px;
-  margin-left: 55.5px;
-  margin-right: 61.5px;
-  height: 9px;
-  background-color: #e9e9e9;
+.layout-1 #celek .benefits-block {
+  display: flex;
+  justify-content: flex-start;
+  gap: 95px;
+  padding-top: 103px;
 }
 
-.mobile #celek .gray-divider {
-  display: none;
-}
-
-.layout-1 #celek .gray-divider-in-image {
-  margin-left: 55.5px;
-  margin-right: 61.5px;
-  height: 9px;
-  background-color: #e9e9e9;
-  position: relative;
-  bottom: 190px;
-}
-
-.layout-0 #celek .gray-divider-in-image {
-  margin-left: 55.5px;
-  margin-right: 61.5px;
-  height: 9px;
-  background-color: #e9e9e9;
-  position: relative;
-  bottom: 185px;
-}
-
-.mobile #celek .gray-divider-in-image {
-  display: none;
-}
-
-.layout-1 #celek .params-ul {
-  margin: 122px 61.5px 0 0;
-  width: 639px;
-}
-
-.layout-0 #celek .params-ul {
-  margin: 79.5px 33px 0 0;
-  width: 639px;
-}
-
-.mobile #celek .params-ul {
-  margin: 79.5px 15px 0 15px;
-  max-width: 100%;
+.layout-1 #celek .custom-header-with-top-border {
+  font-size: 26px;
+  font-weight: bold;
+  line-height: 36px;
 }
 
 .layout-1 #celek .ul-block {
   margin-top: 35.5px;
 }
 
-.layout-0 #celek .ul-block {
-  margin-top: 35.5px;
-}
-
-.mobile #celek .ul-block {
-  margin-top: 28.5px;
-}
-
 .layout-1 #celek .params-li {
-  font-family: "Nunito", sans-serif;
-  padding: 15px 0px 15px 10px;
-  list-style-position: outside;
+  font-size: 16px;
+  line-height: 24px;
+  padding: 15px 0px 15px 40px;
+  list-style-position: inside;
   list-style-image: url(img/Path_5.svg);
+  list-style: none;
+  position: relative;
 }
 
-.layout-0 #celek .params-li {
-  font-family: "Nunito", sans-serif;
-  font-size: 14px;
-  padding: 15px 0px 15px 10px;
-  list-style-position: outside;
-  list-style-image: url(img/Path_5.svg);
-}
-
-.mobile #celek .params-li {
-  font-family: "Nunito", sans-serif;
-  font-size: 14px;
-  padding: 15px 0px 15px 10px;
-  list-style-position: outside;
-  list-style-image: url(img/Path_5.svg);
+.layout-1 #celek .params-li::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  display: block;
+  background: url(img/Path_5.svg) no-repeat;
+  position: absolute;
+  left: 0px;
+  top: 20px;
 }
 
 .layout-1 #celek .param-li-border {
   border-bottom: 2px solid #cccccc;
-  padding: 0px 20px;
 }
 
-.layout-0 #celek .param-li-border {
-  border-bottom: 2px solid #cccccc;
-  padding: 0px 20px;
+@media screen and (max-width: 425px) {
+  .mobile #celek .block-2 .circles-wrapper .circle {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+  }
+  .mobile #celek .block-2 .circles-wrapper .block-2-circle-image {
+    width: 200px;
+    height: 200px;
+    z-index: 2;
+    position: relative;
+    right: 20px;
+  }
+  .mobile #celek .block-2 .circles-wrapper {
+    margin-left: 0;
+    margin-right: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 0;
+  }
+  .mobile #celek .block-2 .block-2-text-wrapper-right .block-2-image {
+    width: 287px;
+    height: 287px;
+    margin-top: 44px;
+  }
+  .mobile #celek .gray-divider-special {
+    margin: 60px 0 0 0;
+    width: 100%;
+    height: 9px;
+    background-color: #e9e9e9;
+  }
+  .mobile #celek .block-2 .block-2-text-wrapper-left .text {
+    margin-top: 43px;
+    line-height: 26px;
+    font-size: 14px;
+  }
+  .mobile #celek .block-2 .block-2-text-wrapper {
+    margin-left: 15px;
+    margin-right: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .mobile #celek .block-2 .heading {
+    margin-left: 0;
+    font-family: "Nunito", sans-serif;
+    margin-top: 30.25px;
+    font-size: 26px;
+    line-height: 36px;
+    font-weight: bold;
+    width: 313px;
+    height: 65px;
+  }
+
+  .mobile #celek .gray-divider-in-image {
+    display: none;
+  }
+
+  .mobile #celek .gray-divider {
+    display: none;
+  }
+
+  .mobile #celek .benefits-block {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column-reverse;
+    margin-bottom: 41.5px;
+  }
+
+  .mobile #celek .custom-header-with-top-border {
+    margin-left: 0px;
+    font-size: 22px;
+    font-weight: bold;
+    line-height: 30px;
+  }
+
+  .mobile #celek .ul-block {
+    margin-top: 28.5px;
+  }
+
+  .mobile #celek .params-li {
+    font-size: 14px;
+  }
 }
 
-.mobile #celek .param-li-border {
-  border-bottom: 2px solid #cccccc;
-  padding: 0px 20px;
+/*BLOCK 3*/
+
+.layout-1 #celek .gray-block-divider {
+  height: 4px;
+  width: 100%;
+  background-color: #e9e9e9;
 }
 
-.layout-1 #celek .custom-header-with-top-border-wrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-}
-
-.layout-0 #celek .custom-header-with-top-border-wrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-}
-
-.mobile #celek .custom-header-with-top-border-wrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-}
-
-.layout-1 #celek .custom-header-with-top-border {
-  margin-left: 0px;
-  font-size: 26px;
-  font-weight: bold;
-  line-height: 36px;
-}
-
-.layout-0 #celek .custom-header-with-top-border {
-  margin-left: 0px;
-  font-size: 22px;
-  font-weight: bold;
-  line-height: 30px;
-}
-
-.mobile #celek .custom-header-with-top-border {
-  margin-left: 0px;
-  font-size: 22px;
-  font-weight: bold;
-  line-height: 30px;
-}
-
-.layout-1 #celek .header-top-border {
-  margin-left: 0px;
-  margin-bottom: 15.5px;
-  width: 67px;
-  height: 5px;
-  background-color: #e5004b;
-}
-
-.layout-0 #celek .header-top-border {
-  margin-left: 0px;
-  margin-bottom: 15.5px;
-  width: 67px;
-  height: 5px;
-  background-color: #e5004b;
-}
-
-.mobile #celek .header-top-border {
-  margin-left: 0px;
-  margin-bottom: 15.5px;
-  width: 67px;
-  height: 5px;
-  background-color: #e5004b;
-}
-
-.layout-1 #celek .benefits-block {
-  display: flex;
-  justify-content: space-between;
-  flex-direction: row;
-  margin-bottom: 79.5px;
-}
-
-.layout-0 #celek .benefits-block {
-  display: flex;
-  justify-content: space-between;
-  flex-direction: row;
-  margin-bottom: 86.5px;
-}
-
-.mobile #celek .benefits-block {
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column-reverse;
-  margin-bottom: 41.5px;
+.layout-1 #celek .block-3 {
+  padding-left: 58px;
 }
 
 .layout-1 #celek .block-3 .text-image-wrapper {
-  margin-left: 55.5px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   flex-direction: row;
 }
 
-.layout-0 #celek .block-3 .text-image-wrapper {
-  margin-left: 35.5px;
-  display: flex;
-  justify-content: space-between;
-  flex-direction: row;
+.layout-1 #celek .block-3-text,
+.layout-1 #celek .block-3-imageContainer {
+  width: 50%;
 }
 
-.mobile #celek .block-3 .text-image-wrapper {
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column-reverse;
+.layout-1 #celek .block-3-image {
+  max-width: 596px;
 }
 
-.layout-1 #celek .block-3 .block-3-text {
-  margin-top: 63px;
-  margin-left: 0;
-  max-width: 650px;
-}
+.layout-1 #celek .header-top-border {
+    margin-left: 0px;
+    margin-bottom: 15.5px;
+    width: 67px;
+    height: 5px;
+    background-color: #e5004b;
+  }
 
-.layout-0 #celek .block-3 .block-3-text {
-  padding-top: 75px;
-  margin-left: 0;
-  min-width: 453px;
-  z-index: 2;
-  background-color: #ffffff;
-}
-
-.mobile #celek .block-3 .block-3-text {
-  padding-top: 0;
-  margin-left: 15px;
-  margin-bottom: 30px;
-  z-index: 2;
-  background-color: #ffffff;
+@media screen and (max-width: 425px) {
+  .mobile #celek .block-3 .text-image-wrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column-reverse;
+  }
 }
 
 .layout-1 #celek .block-3 .block-3-long-text {
@@ -762,38 +616,6 @@ h3 {
   margin-top: 23px;
   font-size: 14px;
   line-height: 26px;
-}
-
-.layout-1 #celek .block-3 .block-3-image {
-  width: 600px;
-  height: 465px;
-}
-
-.layout-0 #celek .block-3 .block-3-image {
-  width: auto;
-  height: 465px;
-  position: relative;
-  right: 59px;
-  z-index: 1;
-}
-
-.mobile #celek .block-3 .block-3-image {
-  width: 100%;
-  height: auto;
-  position: relative;
-  z-index: 1;
-}
-
-.mobile #celek .block-3 .block-3-image {
-  width: 100%;
-  height: auto;
-  position: relative;
-  z-index: -1;
-}
-
-.mobile #celek .block-3 .block-3-image-wrapper {
-  background: rgb(255, 255, 255);
-  background: linear-gradient(0deg, rgba(255, 255, 255, 1) 8%, rgba(255, 255, 255, 0) 45%);
 }
 
 .layout-1 #celek .block-4 .text-image-wrapper {
@@ -1195,36 +1017,6 @@ h3 {
   display: none;
 }
 
-.layout-1 #celek .benefits-block-image {
-  margin-top: 103px;
-  margin-left: 25px;
-}
-
-.layout-0 #celek .benefits-block-image {
-  margin-top: 56.5px;
-  margin-left: 25px;
-}
-
-.mobile #celek .benefits-block-image {
-  margin-top: 72px;
-  margin-left: 39px;
-}
-
-.layout-1 #celek .benefits-image {
-  height: 433px;
-  width: 433px;
-}
-
-.layout-0 #celek .benefits-image {
-  height: 433px;
-  width: 433px;
-}
-
-.mobile #celek .benefits-image {
-  height: 280px;
-  width: 280px;
-}
-
 .layout-1 #celek .video-wrapper {
   margin: 50px 69.5px 57px 55.5px;
 }
@@ -1457,48 +1249,19 @@ h3 {
   left: 65px;
 }
 
-.layout-1 #celek .block-9 .params-ul {
-  margin: 122px 0 0 55.5px;
-  width: 639px;
-}
-
-.layout-0 #celek .block-9 .params-ul {
-  margin: 79px 0 0 35.5px;
-  min-width: 439px;
-}
-
-.mobile #celek .block-9 .params-ul {
-  margin: 0 15px 0 15px;
-  max-width: 100%;
-}
-
-.layout-1 #celek .block-9 .ul-block {
-  margin-top: 35.5px;
-}
-
-.layout-0 #celek .block-9 .ul-block {
-  margin-top: 35.5px;
-}
-
-.mobile #celek .block-9 .ul-block {
-}
-
 .layout-1 #celek .block-9 .params-li {
-  font-family: "Nunito", sans-serif;
   padding: 15px 0px 15px 10px;
   list-style-position: outside;
   list-style-image: url(img/Path_5.svg);
 }
 
 .layout-0 #celek .block-9 .params-li {
-  font-family: "Nunito", sans-serif;
   padding: 15px 0px 15px 10px;
   list-style-position: outside;
   list-style-image: url(img/Path_5.svg);
 }
 
 .mobile #celek .block-9 .params-li {
-  font-family: "Nunito", sans-serif;
   padding: 15px 0px 15px 10px;
   list-style-position: outside;
   list-style-image: url(img/Path_5.svg);
