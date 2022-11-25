@@ -1,3 +1,5 @@
+/*SHARED*/
+
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap");
 
 body {
@@ -39,6 +41,128 @@ h3 {
   border: none;
   background: rgb(229, 0, 64);
   background: linear-gradient(90deg, rgba(229, 0, 64, 1) 0%, rgba(115, 0, 38, 1) 100%);
+}
+
+.layout-1 #celek .block-long-text {
+  margin-top: 23px;
+  font-size: 16px;
+  line-height: 26px;
+}
+
+.layout-1 #celek .custom-header-with-top-border {
+  font-size: 26px;
+  font-weight: bold;
+  line-height: 36px;
+}
+
+.layout-1 #celek .header-top-border {
+  margin-bottom: 15.5px;
+  width: 67px;
+  height: 5px;
+  background-color: #e5004b;
+}
+
+.layout-1 #celek .gray-block-divider {
+  height: 4px;
+  width: 100%;
+  background-color: #e9e9e9;
+}
+
+.layout-1 #celek .text-image-wrapper {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.layout-1 #celek .image-wrapper {
+  position: relative;
+}
+
+.layout-1 #celek .image-gradient-div {
+  width: 170px;
+  height: 100%;
+  background: rgb(255, 255, 255);
+
+  position: absolute;
+  z-index: 2;
+  top: 0;
+}
+
+.layout-1 #celek .image-gradient-left-div {
+  left: 0;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 1) 16%, rgba(255, 255, 255, 0) 100%);
+}
+
+.layout-1 #celek .image-gradient-right-div {
+  right: 0;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 85%);
+}
+
+.layout-1 #celek .block-imageContainer {
+  width: 50.3%;
+}
+
+.layout-1 #celek .block-text {
+  width: 49.7%;
+}
+
+.layout-1 #celek .block-image {
+  width: 100%;
+  display: block;
+}
+
+.layout-1 #celek .block-padding-left {
+  padding-left: 58px;
+}
+
+.layout-1 #celek .block-padding-right {
+    padding-right: 79px;
+  }
+
+@media screen and (max-width: 425px) {
+  .mobile #celek .block-long-text {
+    font-size: 14px;
+  }
+
+  .mobile #celek .custom-header-with-top-border {
+    font-size: 22px;
+    line-height: 30px;
+  }
+
+  .mobile #celek .text-image-wrapper {
+    flex-direction: column-reverse;
+  }
+
+  .mobile #celek .image-gradient-left-div {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 975px) {
+  .layout-1 #celek .block-imageContainer {
+    width: 52%;
+  }
+
+  .layout-1 #celek .block-text {
+    width: 48%;
+  }
+
+  .layout-1 #celek .custom-header-with-top-border {
+    font-size: 22px;
+    line-height: 30px;
+  }
+
+  .layout-1 #celek .block-long-text {
+    font-size: 14px;
+  }
+
+  .layout-1 #celek .block-padding-left {
+    padding-left: 38px;
+  }
+
+  .layout-1 #celek .block-padding-right {
+    padding-right: 38px;
+  }
 }
 
 /*BLOCK 1*/
@@ -433,12 +557,6 @@ h3 {
   padding-top: 103px;
 }
 
-.layout-1 #celek .custom-header-with-top-border {
-  font-size: 26px;
-  font-weight: bold;
-  line-height: 36px;
-}
-
 .layout-1 #celek .ul-block {
   margin-top: 35.5px;
 }
@@ -447,8 +565,7 @@ h3 {
   font-size: 16px;
   line-height: 24px;
   padding: 15px 0px 15px 40px;
-  list-style-position: inside;
-  list-style-image: url(img/Path_5.svg);
+  font-family: "Ubuntu", sans-serif;
   list-style: none;
   position: relative;
 }
@@ -540,13 +657,6 @@ h3 {
     margin-bottom: 41.5px;
   }
 
-  .mobile #celek .custom-header-with-top-border {
-    margin-left: 0px;
-    font-size: 22px;
-    font-weight: bold;
-    line-height: 30px;
-  }
-
   .mobile #celek .ul-block {
     margin-top: 28.5px;
   }
@@ -558,825 +668,174 @@ h3 {
 
 /*BLOCK 3*/
 
-.layout-1 #celek .gray-block-divider {
-  height: 4px;
-  width: 100%;
-  background-color: #e9e9e9;
-}
+/*BLOCK 4*/
 
-.layout-1 #celek .block-3 {
-  padding-left: 58px;
+.layout-1 #celek .block-4-image-wrapper {
+  position: relative;
 }
-
-.layout-1 #celek .block-3 .text-image-wrapper {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-direction: row;
-}
-
-.layout-1 #celek .block-3-text,
-.layout-1 #celek .block-3-imageContainer {
-  width: 50%;
-}
-
-.layout-1 #celek .block-3-image {
-  max-width: 596px;
-}
-
-.layout-1 #celek .header-top-border {
-    margin-left: 0px;
-    margin-bottom: 15.5px;
-    width: 67px;
-    height: 5px;
-    background-color: #e5004b;
-  }
 
 @media screen and (max-width: 425px) {
-  .mobile #celek .block-3 .text-image-wrapper {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column-reverse;
+  .mobile #celek .block-4 .block-4-text {
+    margin-right: 15px;
+    padding-top: 0;
+    padding-left: 10px;
+    background-color: #ffffff;
+  }
+
+  .mobile #celek .block-4 .block-4-image {
+    width: 100%;
+    height: auto;
+    position: relative;
+    z-index: -1;
+  }
+  .mobile #celek .block-4 .block-4-image-wrapper {
+    background: rgb(255, 255, 255);
+    background: linear-gradient(0deg, rgba(255, 255, 255, 1) 8%, rgba(255, 255, 255, 0) 45%);
   }
 }
 
-.layout-1 #celek .block-3 .block-3-long-text {
-  margin-top: 23px;
-  font-size: 16px;
-  line-height: 26px;
-}
+/*BLOCK 5*/
 
-.layout-0 #celek .block-3 .block-3-long-text {
-  margin-top: 23px;
-  font-size: 14px;
-  line-height: 26px;
-}
-
-.mobile #celek .block-3 .block-3-long-text {
-  margin-top: 23px;
-  font-size: 14px;
-  line-height: 26px;
-}
-
-.layout-1 #celek .block-4 .text-image-wrapper {
-  margin-left: 0px;
-  display: flex;
-  justify-content: space-between;
-  flex-direction: row;
-}
-
-.layout-0 #celek .block-4 .text-image-wrapper {
-  margin-left: 0px;
-  display: flex;
-  justify-content: space-between;
-  flex-direction: row;
-}
-
-.mobile #celek .block-4 .text-image-wrapper {
-  margin-left: 0px;
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-}
-
-.layout-1 #celek .block-4 .block-4-text {
-  margin-right: 76.5px;
-  margin-top: 108px;
-  margin-left: 0;
-  max-width: 650px;
-}
-
-.layout-0 #celek .block-4 .block-4-text {
-  margin-right: 36px;
-  padding-top: 63px;
-  padding-left: 10px;
-  min-width: 491px;
+.layout-1 #celek .block-5-image-wrapper {
   position: relative;
-  right: 150px;
-  background-color: #ffffff;
 }
 
-.mobile #celek .block-4 .block-4-text {
-  margin-right: 15px;
-  padding-top: 0;
-  padding-left: 10px;
-  background-color: #ffffff;
+@media screen and (max-width: 425px) {
+  .mobile #celek .block-5 .block-5-text {
+    padding-top: 0;
+    margin-left: 15px;
+    margin-right: 15px;
+    z-index: 2;
+    background-color: #ffffff;
+  }
+
+  .mobile #celek .block-5 .block-5-image {
+    width: 100%;
+    height: auto;
+    position: relative;
+    z-index: -1;
+  }
+  .mobile #celek .block-5 .block-5-image-wrapper {
+    background: rgb(255, 255, 255);
+    background: linear-gradient(0deg, rgba(255, 255, 255, 1) 8%, rgba(255, 255, 255, 0) 45%);
+  }
+  .mobile #celek .image-gradient-right-div {
+    display: none;
+  }
 }
 
-.layout-1 #celek .block-4 .block-4-long-text {
-  margin-top: 23px;
-  font-size: 16px;
-  line-height: 26px;
-}
+/*BLOCK 6*/
 
-.layout-0 #celek .block-4 .block-4-long-text {
-  margin-top: 23px;
-  font-size: 14px;
-  line-height: 26px;
-}
-
-.mobile #celek .block-4 .block-4-long-text {
-  margin-top: 23px;
-  font-size: 14px;
-  line-height: 26px;
-}
-
-.layout-1 #celek .block-4 .block-4-image {
-  width: 600px;
-  height: 463px;
-}
-
-.layout-0 #celek .block-4 .block-4-image {
-  width: auto;
-  height: 463px;
-}
-
-.mobile #celek .block-4 .block-4-image {
-  width: 100%;
-  height: auto;
+.layout-1 #celek .block-6-image-wrapper {
   position: relative;
-  z-index: -1;
 }
 
-.mobile #celek .block-4 .block-4-image-wrapper {
-  background: rgb(255, 255, 255);
-  background: linear-gradient(0deg, rgba(255, 255, 255, 1) 8%, rgba(255, 255, 255, 0) 45%);
+@media screen and (max-width: 425px) {
+  .mobile #celek .block-6 .block-6-text {
+    margin-right: 15px;
+    padding-top: 0;
+    padding-left: 10px;
+    background-color: #ffffff;
+  }
+
+  .mobile #celek .block-6 .block-6-image {
+    width: 100%;
+    height: auto;
+    position: relative;
+    z-index: -1;
+  }
+  .mobile #celek .block-6 .block-6-image-wrapper {
+    background: rgb(255, 255, 255);
+    background: linear-gradient(0deg, rgba(255, 255, 255, 1) 8%, rgba(255, 255, 255, 0) 45%);
+  }
 }
 
-.layout-1 #celek .block-4 .image-gradient-left-div {
-  width: 170px;
-  height: 463px;
-  background: rgb(255, 255, 255);
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
-  position: relative;
-  z-index: 2;
-  bottom: 469px;
-  left: 215px;
-}
+/*BLOCK 7*/
 
-.layout-0 #celek .block-4 .image-gradient-left-div {
-  width: 170px;
-  height: 463px;
-  background: rgb(255, 255, 255);
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
-  position: relative;
-  z-index: 2;
-  bottom: 469px;
-  left: 53px;
-}
-
-.mobile #celek .block-4 .image-gradient-left-div {
-  display: none;
-}
-
-.layout-1 #celek .block-5 .text-image-wrapper {
-  margin-left: 55.5px;
-  display: flex;
-  justify-content: space-between;
-  flex-direction: row;
-}
-
-.layout-0 #celek .block-5 .text-image-wrapper {
-  margin-left: 35.5px;
-  display: flex;
-  justify-content: space-between;
-  flex-direction: row;
-}
-
-.mobile #celek .block-5 .text-image-wrapper {
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column-reverse;
-}
-
-.layout-1 #celek .block-5 .block-5-text {
-  margin-top: 59px;
-  margin-left: 0;
-  max-width: 650px;
-}
-
-.layout-0 #celek .block-5 .block-5-text {
-  padding-top: 35px;
-  margin-left: 0;
-  min-width: 453px;
-  z-index: 2;
-  background-color: #ffffff;
-}
-
-.mobile #celek .block-5 .block-5-text {
-  padding-top: 0;
-  margin-left: 15px;
-  margin-right: 15px;
-  z-index: 2;
-  background-color: #ffffff;
-}
-
-.layout-1 #celek .block-5 .block-5-long-text {
-  margin-top: 23px;
-  font-size: 16px;
-  line-height: 26px;
-}
-
-.layout-0 #celek .block-5 .block-5-long-text {
-  margin-top: 23px;
-  font-size: 14px;
-  line-height: 26px;
-}
-
-.mobile #celek .block-5 .block-5-long-text {
-  margin-top: 35px;
-  font-size: 14px;
-  line-height: 26px;
-}
-
-.layout-1 #celek .block-5 .block-5-image {
-  width: 600px;
-  height: 463px;
-}
-
-.layout-0 #celek .block-5 .block-5-image {
-  width: auto;
-  height: 465px;
-  position: relative;
-  right: 59px;
-  z-index: 1;
-}
-
-.mobile #celek .block-5 .block-5-image {
-  width: 100%;
-  height: auto;
-  position: relative;
-  z-index: -1;
-}
-
-.mobile #celek .block-5 .block-5-image-wrapper {
-  background: rgb(255, 255, 255);
-  background: linear-gradient(0deg, rgba(255, 255, 255, 1) 8%, rgba(255, 255, 255, 0) 45%);
-}
-
-.layout-1 #celek .block-6 .text-image-wrapper {
-  margin-left: 0px;
-  display: flex;
-  justify-content: space-between;
-  flex-direction: row;
-}
-
-.layout-0 #celek .block-6 .text-image-wrapper {
-  margin-left: 0px;
-  display: flex;
-  justify-content: space-between;
-  flex-direction: row;
-}
-
-.mobile #celek .block-6 .text-image-wrapper {
-  margin-left: 0px;
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-}
-
-.layout-1 #celek .block-6 .block-6-text {
-  margin-right: 76.5px;
-  margin-top: 68px;
-  margin-left: 0;
-  max-width: 650px;
-}
-
-.layout-0 #celek .block-6 .block-6-text {
-  margin-right: 36px;
-  padding-top: 63px;
-  padding-left: 10px;
-  min-width: 491px;
-  position: relative;
-  right: 150px;
-  background-color: #ffffff;
-}
-
-.mobile #celek .block-6 .block-6-text {
-  margin-right: 15px;
-  padding-top: 0;
-  padding-left: 10px;
-  background-color: #ffffff;
-}
-
-.layout-1 #celek .block-6 .block-6-long-text {
-  margin-top: 23px;
-  font-size: 16px;
-  line-height: 26px;
-}
-
-.layout-0 #celek .block-6 .block-6-long-text {
-  margin-top: 23px;
-  font-size: 14px;
-  line-height: 26px;
-}
-
-.mobile #celek .block-6 .block-6-long-text {
-  margin-top: 35px;
-  font-size: 14px;
-  line-height: 26px;
-}
-
-.layout-1 #celek .block-6 .block-6-image {
-  width: 600px;
-  height: 463px;
-}
-
-.layout-0 #celek .block-6 .block-6-image {
-  width: auto;
-  height: 463px;
-}
-
-.mobile #celek .block-6 .block-6-image {
-  width: 100%;
-  height: auto;
-  position: relative;
-  z-index: -1;
-}
-
-.mobile #celek .block-6 .block-6-image-wrapper {
-  background: rgb(255, 255, 255);
-  background: linear-gradient(0deg, rgba(255, 255, 255, 1) 8%, rgba(255, 255, 255, 0) 45%);
-}
-
-.layout-1 #celek .block-6 .image-gradient-left-div {
-  width: 170px;
-  height: 463px;
-  background: rgb(255, 255, 255);
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
-  position: relative;
-  z-index: 2;
-  bottom: 469px;
-  left: 193px;
-}
-
-.layout-0 #celek .block-6 .image-gradient-left-div {
-  width: 170px;
-  height: 463px;
-  background: rgb(255, 255, 255);
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
-  position: relative;
-  z-index: 2;
-  bottom: 469px;
-  left: 65px;
-}
-
-.mobile #celek .block-6 .image-gradient-left-div {
-  display: none;
-}
-
-.layout-1 #celek .image-gradient-right-div {
-  width: 170px;
-  height: 463px;
-  background: rgb(255, 255, 255);
-  background: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
-  position: relative;
-  z-index: 2;
-  bottom: 469px;
-  right: 215px;
-}
-
-.layout-0 #celek .image-gradient-right-div {
-  width: 170px;
-  height: 463px;
-  background: rgb(255, 255, 255);
-  background: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
-  position: relative;
-  z-index: 2;
-  bottom: 469px;
-  right: 157px;
-}
-
-.mobile #celek .image-gradient-right-div {
-  display: none;
-}
-
-.layout-1 #celek .block-3-image-gradient-right-div {
-  width: 170px;
-  height: 463px;
-  background: rgb(255, 255, 255);
-  background: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
-  position: relative;
-  z-index: 2;
-  bottom: 469px;
-  right: 215px;
-}
-
-.layout-0 #celek .block-3-image-gradient-right-div {
-  width: 170px;
-  height: 464px;
-  background: rgb(255, 255, 255);
-  background: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
-  position: relative;
-  z-index: 2;
-  bottom: 470px;
-  right: 158px;
-}
-
-.mobile #celek .block-3-image-gradient-right-div {
-  display: none;
-}
-
-.layout-1 #celek .image-gradient-left-div {
-  width: 170px;
-  height: 463px;
-  background: rgb(255, 255, 255);
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
-  position: relative;
-  z-index: 2;
-  bottom: 469px;
-  left: 193px;
-}
-
-.layout-0 #celek .image-gradient-left-div {
-  width: 170px;
-  height: 463px;
-  background: rgb(255, 255, 255);
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
-  position: relative;
-  z-index: 2;
-  bottom: 469px;
-  left: 54px;
-}
-
-.mobile #celek .image-gradient-left-div {
-  display: none;
-}
-
-.layout-1 #celek .banner-image {
-  height: auto;
-  width: 1250px;
-}
-
-.layout-0 #celek .banner-image {
-  height: auto;
-  width: 975px;
-}
-
-.mobile #celek .banner-image {
-  display: none;
+.layout-1 #celek .block-7 {
+  padding-top: 54px;
+  padding-bottom: 57px;
 }
 
 .layout-1 #celek .video-wrapper {
-  margin: 50px 69.5px 57px 55.5px;
-}
-
-.layout-0 #celek .video-wrapper {
-  margin: 43px 39px 39px 39px;
-}
-
-.mobile #celek .video-wrapper {
-  margin: 23px 0;
-}
-
-.layout-1 .video-iframe {
-  width: 1125px;
-  height: 633px;
-}
-
-.layout-0 .video-iframe {
-  width: 904px;
-  height: 509px;
-}
-
-.mobile .video-iframe {
+  position: relative;
+  overflow: hidden;
   width: 100%;
-  min-height: 200px;
-  height: auto;
+  padding-top: 56.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
 }
 
-.layout-1 #celek .block-7 .text-image-wrapper {
-  margin-left: 55.5px;
-  display: flex;
-  justify-content: space-between;
-  flex-direction: row;
-}
-
-.layout-0 #celek .block-7 .text-image-wrapper {
-  margin-left: 35.5px;
-  display: flex;
-  justify-content: space-between;
-  flex-direction: row;
-}
-
-.mobile #celek .block-7 .text-image-wrapper {
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column-reverse;
-}
-
-.layout-1 #celek .block-7 .block-7-text {
-  margin-top: 111px;
-  margin-left: 0;
-  max-width: 650px;
-}
-
-.layout-0 #celek .block-7 .block-7-text {
-  padding-top: 81px;
-  margin-left: 0;
-  min-width: 453px;
-  z-index: 2;
-  background-color: #ffffff;
-}
-
-.mobile #celek .block-7 .block-7-text {
-  padding-top: 0;
-  margin-left: 15px;
-  margin-right: 15px;
-  margin-bottom: 35px;
-  z-index: 2;
-  background-color: #ffffff;
-}
-
-.layout-1 #celek .block-7 .block-7-long-text {
-  margin-top: 23px;
-  font-size: 16px;
-  line-height: 26px;
-}
-
-.layout-0 #celek .block-7 .block-7-long-text {
-  margin-top: 23px;
-  font-size: 14px;
-  line-height: 26px;
-}
-
-.mobile #celek .block-7 .block-7-long-text {
-  margin-top: 35px;
-  font-size: 14px;
-  line-height: 26px;
-}
-
-.layout-1 #celek .block-7 .block-7-image {
-  width: auto;
-  height: 463px;
-}
-
-.layout-0 #celek .block-7 .block-7-image {
-  width: auto;
-  height: 465px;
-  position: relative;
-  right: 10px;
-  z-index: 1;
-}
-
-.mobile #celek .block-7 .block-7-image {
+.layout-1 #celek .video-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
   width: 100%;
-  height: auto;
-  position: relative;
-  z-index: -1;
+  height: 100%;
+  border: none;
 }
 
-.mobile #celek .block-7 .block-7-image-wrapper {
-  background: rgb(255, 255, 255);
-  background: linear-gradient(0deg, rgba(255, 255, 255, 1) 8%, rgba(255, 255, 255, 0) 45%);
+/*BLOCK 8*/
+
+.layout-1 #celek .block-image-fix {
+  width: 75%;
+  margin-left: auto;
 }
 
-.layout-1 #celek .block-8 .text-image-wrapper {
-  margin-left: 0px;
+@media screen and (max-width: 425px) {
+  .mobile #celek .block-8 .block-8-text {
+    padding-top: 0;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-bottom: 35px;
+    z-index: 2;
+    background-color: #ffffff;
+  }
+}
+
+/*BLOCK 10*/
+
+.layout-1 #celek .block-10 .benefits-block {
   display: flex;
-  justify-content: space-between;
-  flex-direction: row;
+  justify-content: flex-start;
+  gap: 0;
+  padding-top: 103px;
 }
 
-.layout-0 #celek .block-8 .text-image-wrapper {
-  margin-left: 0px;
-  display: flex;
-  justify-content: space-between;
-  flex-direction: row;
+.layout-1 #celek .block-10 .benefits-block-image {
+  width: 50%;
 }
 
-.mobile #celek .block-8 .text-image-wrapper {
-  margin-left: 0px;
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-}
-
-.layout-1 #celek .block-8 .block-8-text {
-  margin-right: 76.5px;
-  margin-top: 134px;
-  margin-left: 20px;
-  max-width: 650px;
-}
-
-.layout-0 #celek .block-8 .block-8-text {
-  margin-right: 36px;
-  padding-top: 133px;
-  padding-left: 10px;
-  min-width: 491px;
-  position: relative;
-  right: 150px;
-  background-color: #ffffff;
-}
-
-.mobile #celek .block-8 .block-8-text {
-  margin-right: 15px;
-  margin-left: 15px;
-  margin-bottom: 30px;
-  background-color: #ffffff;
-}
-
-.layout-1 #celek .block-8 .block-8-long-text {
-  margin-top: 23px;
-  font-size: 16px;
-  line-height: 26px;
-}
-
-.layout-0 #celek .block-8 .block-8-long-text {
-  margin-top: 23px;
-  font-size: 14px;
-  line-height: 26px;
-}
-
-.mobile #celek .block-8 .block-8-long-text {
-  margin-top: 23px;
-  font-size: 14px;
-  line-height: 26px;
-}
-
-.layout-1 #celek .block-8 .block-8-image {
-  width: 600px;
-  height: 463px;
-}
-
-.layout-0 #celek .block-8 .block-8-image {
-  width: auto;
-  height: 463px;
-}
-
-.mobile #celek .block-8 .block-8-image {
+.layout-1 #celek .block-10 .benefits-image {
   width: 100%;
-  height: auto;
-  position: relative;
-  z-index: -1;
 }
 
-.mobile #celek .block-8 .block-8-image-wrapper {
-  background: rgb(255, 255, 255);
-  background: linear-gradient(0deg, rgba(255, 255, 255, 1) 8%, rgba(255, 255, 255, 0) 45%);
-}
-
-.layout-1 #celek .block-8 .block-8-image .image-gradient-left-div {
-  width: 170px;
-  height: 463px;
-  background: rgb(255, 255, 255);
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
-  position: relative;
-  z-index: 2;
-  bottom: 469px;
-  left: 215px;
-}
-
-.layout-0 #celek .block-8 .block-8-image .image-gradient-left-div {
-  width: 170px;
-  height: 463px;
-  background: rgb(255, 255, 255);
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
-  position: relative;
-  z-index: 2;
-  bottom: 469px;
-  left: 65px;
-}
-
-.mobile #celek .block-8 .block-8-image .image-gradient-left-div {
-  width: 170px;
-  height: 463px;
-  background: rgb(255, 255, 255);
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
-  position: relative;
-  z-index: 2;
-  bottom: 469px;
-  left: 65px;
-}
-
-.layout-1 #celek .block-9 .params-li {
-  padding: 15px 0px 15px 10px;
-  list-style-position: outside;
-  list-style-image: url(img/Path_5.svg);
-}
-
-.layout-0 #celek .block-9 .params-li {
-  padding: 15px 0px 15px 10px;
-  list-style-position: outside;
-  list-style-image: url(img/Path_5.svg);
-}
-
-.mobile #celek .block-9 .params-li {
-  padding: 15px 0px 15px 10px;
-  list-style-position: outside;
-  list-style-image: url(img/Path_5.svg);
-}
-
-.layout-1 #celek .block-9 .param-li-border {
-  border-bottom: 2px solid #cccccc;
-  padding: 0px 20px;
-}
-
-.layout-0 #celek .block-9 .param-li-border {
-  border-bottom: 2px solid #cccccc;
-  padding: 0px 20px;
-}
-
-.mobile #celek .block-9 .param-li-border {
-  border-bottom: 2px solid #cccccc;
-  padding: 0px 20px;
-}
-
-.layout-1 #celek .block-9 .benefits-block {
-  margin: 0;
-}
-
-.layout-0 #celek .block-9 .benefits-block {
-  margin: 0;
-}
-
-.mobile #celek .block-9 .benefits-block {
-  margin: 0;
-}
-
-.layout-1 #celek .block-9 .benefits-block-image {
-  margin: 0;
-  margin-top: 40px;
-}
-
-.layout-0 #celek .block-9 .benefits-block-image {
-  margin: 0;
-  position: relative;
-  right: 50px;
-}
-
-.mobile #celek .block-9 .benefits-block-image {
-  margin: 0;
-}
-.layout-1 #celek .block-9 .benefits-image {
-  width: auto;
-  height: 463px;
-}
-
-.layout-0 #celek .block-9 .benefits-image {
-  width: auto;
-  height: 463px;
-}
-
-.mobile #celek .block-9 .benefits-image {
-  margin-top: 14px;
-  width: 100%;
-  height: auto;
-}
+/*QUOTE*/
 
 .layout-1 #celek .quoting {
   position: relative;
   background: rgb(229, 0, 75);
   background: linear-gradient(90deg, rgba(229, 0, 75, 1) 0%, rgba(115, 0, 38, 1) 100%);
-  margin: 47px 64px 53px 58px;
-  padding: 33px 286px 33px 249px;
-}
-
-.layout-0 #celek .quoting {
-  position: relative;
-  background: rgb(229, 0, 75);
-  background: linear-gradient(90deg, rgba(229, 0, 75, 1) 0%, rgba(115, 0, 38, 1) 100%);
-  margin: 41px 39px;
-  padding: 31px 138px 30px 137px;
-}
-
-.mobile #celek .quoting {
-  position: relative;
-  max-width: 100%;
-  background: rgb(229, 0, 75);
-  background: linear-gradient(90deg, rgba(229, 0, 75, 1) 0%, rgba(115, 0, 38, 1) 100%);
-  margin: 27px 15px 37px 15px;
-  padding: 56px 33px 55px 33px;
+  padding: 33px 36px;
+  margin-top: 47px;
+  margin-bottom: 53px;
 }
 
 .layout-1 #celek .quote {
   color: white;
   font-size: 30px;
   line-height: 42px;
-
   font-weight: bold;
   text-align: center;
   font-style: italic;
+  width: 60%;
+  margin: auto;
 }
 
 .layout-0 #celek .quote {
   color: white;
   font-size: 26px;
   line-height: 38px;
-
-  font-weight: bold;
-  text-align: center;
-  font-style: italic;
-}
-
-.mobile #celek .quote {
-  color: white;
-  font-size: 24px;
-  line-height: 36px;
-
-  font-weight: bold;
-  text-align: center;
-  font-style: italic;
 }
 
 .layout-1 #celek .quoting-symbol {
@@ -1385,14 +844,17 @@ h3 {
   top: 28px;
 }
 
-.layout-0 #celek .quoting-symbol {
-  position: absolute;
-  left: 28px;
-  top: 24px;
+.layout-1 #celek .banner-image {
+  width: 100%;
 }
 
-.mobile #celek .quoting-symbol {
-  position: absolute;
-  left: 19px;
-  top: 21px;
+@media screen and (max-width: 425px) {
+  .mobile #celek .banner-image {
+    display: none;
+  }
+  .mobile #celek .quote {
+    color: white;
+    font-size: 24px;
+    line-height: 36px;
+  }
 }
