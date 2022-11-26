@@ -13,6 +13,11 @@ body {
   padding: 0;
 }
 
+#celek a {
+  text-decoration: none;
+  color: inherit;
+}
+
 #celek p {
   font-weight: 400;
   color: #313131;
@@ -212,6 +217,13 @@ h3 {
   text-align: center;
 }
 
+.layout-1 #celek .block-1 .benefit-component:hover {
+  background-color: white;
+  background-image: none;
+  box-shadow: 0px 5px 50px #00000059;
+  transition: all 0.5s ease;
+}
+
 .layout-1 #celek .benefit-component__imageContainer {
   position: relative;
 }
@@ -273,6 +285,7 @@ h3 {
   border: 1px solid #ffffff;
   position: relative;
   z-index: 99;
+  transition: all 0.5s ease;
 }
 
 .layout-1 #celek .block-1 .benefit-component-line {
@@ -319,6 +332,13 @@ h3 {
   transform: translatex(-50%);
   bottom: -30px;
   white-space: nowrap;
+  transition: all 0.5s ease;
+}
+
+.layout-1 #celek .block-1 .benefit-component-button:hover {
+  cursor: pointer;
+  background-color: #85002C;
+  transition: all 0.5s ease;
 }
 
 .layout-1 #celek .benefit-component-button__text {
@@ -612,12 +632,12 @@ h3 {
 }
 
 .layout-1 #celek .block-2 .circles-wrapper .block-2-circle-image {
-    width: 160px;
-    height: 160px;
-    border: 2px solid white;
-    border-radius: 100%;
-    box-shadow: 0px 5px 20px #00000059;
-  }
+  width: 160px;
+  height: 160px;
+  border: 2px solid white;
+  border-radius: 100%;
+  box-shadow: 0px 5px 20px #00000059;
+}
 
 @media screen and (max-width: 425px) {
   .mobile #celek .block-2 .circles-wrapper .circle {
@@ -847,7 +867,7 @@ h3 {
   display: flex;
   justify-content: flex-start;
   gap: 0;
-  padding-top: 103px;
+  padding-top: 78px;
 }
 
 .layout-1 #celek .block-10 .benefits-block-image {
@@ -873,6 +893,160 @@ h3 {
     flex-direction: column-reverse;
     margin-bottom: 41.5px;
   }
+}
+
+/*SLIDER*/
+
+.layout-1 #celek .block-slider {
+  padding-top: 43px;
+  padding-bottom: 43px;
+}
+
+.layout-1 #celek .slider__header {
+  display: flex;
+  flex-direction: column;
+}
+
+.layout-1 #celek .slider__arrowLeft {
+  transform: rotate(180deg);
+}
+
+.layout-1 #celek .slider {
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+  scroll-behavior: smooth;
+  padding: 13px;
+}
+
+.layout-1 #celek .slider__container {
+  margin-top: 20px;
+  position: relative;
+  padding: 0 35px;
+}
+
+.layout-1 #celek .slider__arrowContainer {
+  position: absolute;
+  z-index: 2;
+  top: 110px;
+}
+
+.layout-1 #celek .slider__arrow:hover {
+  cursor: pointer;
+  box-shadow: 0px 3px 20px #0000004d;
+  transition: all 0.5s ease;
+}
+
+.layout-1 #celek .slider__arrowContainerLeft {
+  left: -10px;
+}
+
+.layout-1 #celek .slider__arrowContainerRight {
+  right: -10px;
+}
+
+.layout-1 #celek .slider__arrow {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  border: 1px solid #bbbbbb;
+  transition: all 0.5s ease;
+}
+
+.layout-1 #celek .slider__item {
+  flex-shrink: 0;
+  transition: all 0.5s ease;
+  padding: 0 13px;
+}
+
+.layout-1 #celek .slider__item:hover {
+  cursor: pointer;
+  box-shadow: 0px 3px 20px #0000004d;
+  transition: all 0.5s ease;
+}
+
+.layout-1 #celek .slider__image {
+  max-width: 182px;
+  display: block;
+}
+
+.layout-1 #celek .slider__header {
+  font-size: 16px;
+  line-height: 18px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.layout-1 #celek .slider__description {
+  font-size: 13px;
+  line-height: 20px;
+  margin-bottom: 11px;
+}
+
+.layout-1 #celek .slider__price {
+  font-size: 18px;
+  line-height: 21px;
+  color: #e5004b;
+  font-weight: 700;
+}
+
+.layout-1 #celek .slider__discountPrice {
+  font-size: 12px;
+  line-height: 13px;
+  display: inline-block;
+  position: relative;
+}
+
+.layout-1 #celek .slider__discountPrice::after {
+  content: "";
+  width: 100%;
+  height: 2px;
+  background-color: #e5004b;
+  display: block;
+  transform: rotate(-10deg);
+  position: absolute;
+  top: 7px;
+}
+
+.layout-1 #celek .slider__headerTop {
+  width: 13px;
+  height: 3px;
+  display: block;
+  background-color: #e5004b;
+  margin-bottom: 6px;
+}
+
+.layout-1 #celek .slider__imageContainer {
+  width: 100%;
+  min-height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.layout-1 #celek .slider__discount {
+  width: 47px;
+  height: 47px;
+  background: linear-gradient(180deg, #e5004b 0%, #730026 100%);
+  position: absolute;
+  top: 20px;
+  left: 0;
+  border-radius: 100%;
+  color: white;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 4px;
+  font-size: 14px;
+}
+
+.layout-1 #celek .slider__header--fix {
+  min-height: 36px;
 }
 
 /*QUOTE*/
