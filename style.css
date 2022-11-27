@@ -62,7 +62,7 @@ h3 {
 
 .layout-1 #celek .header-top-border {
   margin-bottom: 15.5px;
-  width: 67px;
+  width: 0px;
   height: 5px;
   background-color: #e5004b;
 }
@@ -77,6 +77,7 @@ h3 {
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  overflow: hidden;
 }
 
 .layout-1 #celek .image-wrapper {
@@ -337,7 +338,7 @@ h3 {
 
 .layout-1 #celek .block-1 .benefit-component-button:hover {
   cursor: pointer;
-  background-color: #85002C;
+  background-color: #85002c;
   transition: all 0.5s ease;
 }
 
@@ -863,31 +864,184 @@ h3 {
 
 /*BLOCK 10*/
 
-.layout-1 #celek .block-10 .benefits-block {
+.test {
+  width: 100%;
+}
+
+.layout-1 #celek .block-10 {
+  padding-top: 49px;
+  padding-bottom: 57px;
+}
+
+.layout-1 #celek .table {
+  margin-top: 26px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.layout-1 #celek .table__header {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 280px;
+  width: 29%;
+  position: relative;
+  z-index: 5;
+}
+
+.layout-1 #celek .table__headerItemContainer {
+  padding: 20px;
+  background-color: #e9e9e9;
+  position: relative;
+}
+
+.layout-1 #celek .table__headerItem {
+  font-weight: 700;
+  font-size: 14px;
+  position: relative;
+  z-index: 5;
+}
+
+.layout-1 #celek .table__contentText {
+  padding: 20px 46px 20px 49px;
+  width: 100%;
+}
+
+.layout-1 #celek .table__content {
+  display: flex;
+  align-items: center;
+  box-shadow: 20px 3px 30px #00000029;
+  max-height: 352px;
+  width: 70.9%;
+}
+
+.layout-1 #celek .table__text {
+  font-size: 14px;
+  line-height: 26px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  text-overflow: ellipsis;
+}
+
+.layout-1 #celek .table__textHeader {
+  font-size: 16px;
+  margin-bottom: 18px;
+}
+
+.layout-1 #celek .table__image {
+  display: block;
+  max-width: 352px;
+  width: 100%;
+  margin-left: auto;
+}
+
+.layout-1 #celek .table__imageContainer {
+  width: 100%;
+}
+
+.layout-1 #celek .table__headerItem--selected::before {
+  content: "";
+  width: 100%;
+  height: 62px;
+  border-right: 1px solid #e5004b;
+  border-radius: 0 2px 2px 0;
+  display: block;
+  position: absolute;
+  top: -3px;
+  left: 0;
+  z-index: 2;
+  background: linear-gradient(282deg, #e5004b 0%, #730026 100%);
+}
+
+.layout-1 #celek .table__headerItem--selected::after {
+  content: "";
+  width: 0;
+  height: 0;
+  border-top: 31px solid transparent;
+  border-left: 38px solid #e5004b;
+  border-bottom: 31px solid transparent;
+  display: block;
+  position: absolute;
+  top: -3px;
+  right: -38px;
+  z-index: 2;
+}
+
+@media screen and (max-width: 975px) {
+  .layout-0 #celek .table__imageContainer {
+    padding: 53px 29px 50px 0;
+  }
+
+  .layout-1 #celek .table__image {
+    max-width: 244px;
+  }
+  .layout-1 #celek .table__contentText {
+    padding: 20px 42px 20px 34px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+
+  .mobile #celek .table, .layout-0 #celek .table__content {
+    flex-direction: column;
+  }
+
+  .mobile #celek .table__header {
+    max-width: unset;
+    width: 100%;
+  }
+
+  .mobile #celek .table__headerItem--selected::after  {
+    display: none;
+  }
+
+  .mobile #celek .table__content {
+    width: 100%;
+    max-height: unset;
+    box-shadow: 0px 3px 30px #00000029;
+  }
+
+  .mobile #celek .table__contentText {
+    padding: 31px 21px;
+  }
+
+  .mobile #celek .table__imageContainer {
+    padding: 0;
+  }
+
+  .mobile #celek .table__image {
+    max-width: unset;
+  }
+}
+
+/*BLOCK 11*/
+
+.layout-1 #celek .block-11 .benefits-block {
   display: flex;
   justify-content: flex-start;
   gap: 0;
   padding-top: 78px;
 }
 
-.layout-1 #celek .block-10 .benefits-block-image {
+.layout-1 #celek .block-11 .benefits-block-image {
   width: 50%;
 }
 
-.layout-1 #celek .block-10 .benefits-image {
+.layout-1 #celek .block-11 .benefits-image {
   width: 100%;
 }
 
 @media screen and (max-width: 425px) {
-  .mobile #celek .block-10 .benefits-block {
+  .mobile #celek .block-11 .benefits-block {
     padding-top: 0;
   }
 
-  .mobile #celek .block-10 .benefits-block-image {
+  .mobile #celek .block-11 .benefits-block-image {
     width: 100%;
   }
 
-  .mobile #celek .block-10 .benefits-block {
+  .mobile #celek .block-11 .benefits-block {
     display: flex;
     justify-content: space-between;
     flex-direction: column-reverse;
@@ -931,6 +1085,25 @@ h3 {
   top: 110px;
 }
 
+.layout-1 #celek .slider__container::before, .layout-1 #celek .slider__container::after {
+  content: '';
+  width: 45px;
+  height: 265px;
+  display: block;
+  background-color: white;
+  z-index: 1;
+  position: absolute;
+  top: 0;
+}
+
+.layout-1 #celek .slider__container::before {
+  left: 0;
+}
+
+.layout-1 #celek .slider__container::after {
+  right: 15px;
+}
+
 .layout-1 #celek .slider__arrow:hover {
   cursor: pointer;
   box-shadow: 0px 3px 20px #0000004d;
@@ -954,6 +1127,8 @@ h3 {
   border-radius: 100%;
   border: 1px solid #bbbbbb;
   transition: all 0.5s ease;
+  position: relative;
+  z-index: 99;
 }
 
 .layout-1 #celek .slider__item {
@@ -1002,13 +1177,13 @@ h3 {
 
 .layout-1 #celek .slider__discountPrice::after {
   content: "";
-  width: 100%;
+  width: 92%;
   height: 2px;
   background-color: #e5004b;
   display: block;
-  transform: rotate(-10deg);
+  transform: rotate(-16deg);
   position: absolute;
-  top: 7px;
+  top: 5px;
 }
 
 .layout-1 #celek .slider__headerTop {
@@ -1047,6 +1222,23 @@ h3 {
 
 .layout-1 #celek .slider__header--fix {
   min-height: 36px;
+}
+
+.layout-1 #celek .slider__imageContainer::before {
+  content: '';
+  width: 2px;
+  height: 265px;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: -20px;
+  background: linear-gradient(180deg, #FFFFFF 0%, #CCCCCC 49%, #FFFFFF 100%);
+}
+
+@media screen and (max-width:425px) {
+  .mobile #celek .slider {
+    padding: 0;
+  }
 }
 
 /*QUOTE*/
@@ -1110,5 +1302,72 @@ h3 {
   .mobile #celek .quoting-symbol {
     left: 21px;
     top: 18px;
+  }
+}
+
+/*ANIMATION*/
+
+.layout-1 #celek .image-wrapper-right {
+  right: -100px;
+}
+
+.layout-1 #celek .image-wrapper-left {
+  left: -100px;
+}
+
+.layout-1 #celek .header-top-border-inView {
+  animation-duration: 1s;
+  animation-delay: 0.5s;
+  animation-fill-mode: forwards;
+  animation-name: barWidthgrow;
+}
+
+@keyframes barWidthgrow {
+  from {
+    width: 0px;
+    transition: all 0.5s ease-in;
+  }
+
+  to {
+    width: 67px;
+    transition: all 0.5s ease-in;
+  }
+}
+
+.layout-1 #celek .image-wrapper-right-inView {
+  animation-duration: 1s;
+  animation-delay: 0.5s;
+  animation-fill-mode: forwards;
+  animation-name: imageRight;
+}
+
+@keyframes imageRight {
+  from {
+    right: -100px;
+    transition: all 0.5s ease-in;
+  }
+
+  to {
+    right: 0;
+    transition: all 0.5s ease-in;
+  }
+}
+
+.layout-1 #celek .image-wrapper-left-inView {
+  animation-duration: 1s;
+  animation-delay: 0.5s;
+  animation-fill-mode: forwards;
+  animation-name: imageLeft;
+}
+
+@keyframes imageLeft {
+  from {
+    left: -100px;
+    transition: all 0.5s ease-in;
+  }
+
+  to {
+    left: 0;
+    transition: all 0.5s ease-in;
   }
 }

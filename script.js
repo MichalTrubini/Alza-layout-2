@@ -3,13 +3,14 @@
 //0.GENERAL
 //1.SET WIDTH OF SLIDER ITEM
 //2.SLIDER
+//3.TABLE
+//4.ANIMATIONS WHEN SCROLLED TO VIEW
 //
 //***
 
 /*-----------------------------------------------------------------------------------*/
 /*	 0.GENERAL
 /*-----------------------------------------------------------------------------------*/
-
 
 //variables declaration
 
@@ -25,21 +26,20 @@ const adjWidthScreen = screenWidth > 1250 ? 1250 : screenWidth;
 
 //-->variables declaration
 
-const sliderItem = [...document.querySelectorAll('#celek .slider__item')];
-const slider = document.querySelector('#celek .slider');
+const sliderItem = [...document.querySelectorAll("#celek .slider__item")];
+const slider = document.querySelector("#celek .slider");
 const sliderWidth = slider.offsetWidth;
 let style = getComputedStyle(slider);
-let sliderPadding = Number(style.padding.replace('px',''));
+let sliderPadding = Number(style.padding.replace("px", ""));
 
 //-->functions
-console.log(sliderItem)
-sliderItem.forEach(item => {
-    if (screenWidth >= 1250) item.style.width = (sliderWidth - sliderPadding*2) / 4 + 'px'
-    else if (screenWidth > 767) item.style.width = (sliderWidth - sliderPadding*2) / 3 + 'px'
-    else if (screenWidth > 525) item.style.width = (sliderWidth - sliderPadding*2) / 2 + 'px'
-    else item.style.width = 100 + '%';
-})
 
+sliderItem.forEach((item) => {
+  if (screenWidth >= 1250) item.style.width = (sliderWidth - sliderPadding * 2) / 4 + "px";
+  else if (screenWidth > 767) item.style.width = (sliderWidth - sliderPadding * 2) / 3 + "px";
+  else if (screenWidth > 525) item.style.width = (sliderWidth - sliderPadding * 2) / 2 + "px";
+  else item.style.width = (sliderWidth - sliderPadding)+ "px";
+});
 
 /*-----------------------------------------------------------------------------------*/
 /*	 2.SLIDER
@@ -53,21 +53,54 @@ sliderItem.forEach(item => {
 
 //-->variables declaration
 
-const sliders = [...document.querySelectorAll('#celek .slider')];
-const nxtBtn = [...document.querySelectorAll('#celek .slider__arrowContainerRight')];
-const preBtn = [...document.querySelectorAll('#celek .slider__arrowContainerLeft')];
+const sliders = [...document.querySelectorAll("#celek .slider")];
+const nxtBtn = [...document.querySelectorAll("#celek .slider__arrowContainerRight")];
+const preBtn = [...document.querySelectorAll("#celek .slider__arrowContainerLeft")];
 
 //-->functions
 
 sliders.forEach((item, i) => {
+  let containerWidth = item.children[0].offsetWidth;
 
-    let containerWidth = item.children[0].offsetWidth; 
+  nxtBtn[i].addEventListener("click", () => {
+    item.scrollLeft += containerWidth;
+  });
 
-    nxtBtn[i].addEventListener('click', () => {
-        item.scrollLeft += containerWidth;  
+  preBtn[i].addEventListener("click", () => {
+    item.scrollLeft -= containerWidth;
+  });
+});
+
+/*-----------------------------------------------------------------------------------*/
+/*	 3.TABLE
+/*-----------------------------------------------------------------------------------*/
+
+/*-----------------------------------------------------------------------------------*/
+/*	 4.ANIMATIONS WHEN SCROLLED TO VIEW
+/*-----------------------------------------------------------------------------------*/
+
+const elementsToAnimate = document.querySelectorAll(`[data-animate="animation"]`);
+
+let observer = new IntersectionObserver(entries => {
+
+    const headerTopBar = entries.filter(entry => entry.target.classList.contains('header-top-border'))
+    const imageAnimateLeft = entries.filter(entry => entry.target.classList.contains('image-wrapper-right'))
+    const imageAnimateRight = entries.filter(entry => entry.target.classList.contains('image-wrapper-left'))
+
+    headerTopBar.forEach(item => {
+        if (item.isIntersecting === true) item.target.classList.add('header-top-border-inView')
     })
 
-    preBtn[i].addEventListener('click', () => {
-        item.scrollLeft -= containerWidth;
+    imageAnimateLeft.forEach(item => {
+        if (item.isIntersecting === true) item.target.classList.add('image-wrapper-right-inView')
     })
-})
+
+    imageAnimateRight.forEach(item => {
+        if (item.isIntersecting === true) item.target.classList.add('image-wrapper-left-inView')
+    })
+
+});
+
+elementsToAnimate.forEach((item) => {
+    observer.observe(item);
+});
