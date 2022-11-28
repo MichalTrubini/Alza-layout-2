@@ -1383,11 +1383,11 @@ h3 {
 /*ANIMATION*/
 
 .layout-1 #celek .image-wrapper-right {
-  right: -100px;
+  transform: translatex(100px);
 }
 
 .layout-1 #celek .image-wrapper-left {
-  left: -100px;
+  transform: translatex(-100px);
 }
 
 .layout-1 #celek .header-top-border-inView {
@@ -1418,12 +1418,12 @@ h3 {
 
 @keyframes imageRight {
   from {
-    right: -100px;
+    transform: translatex(100px);
     transition: all 0.5s ease-in;
   }
 
   to {
-    right: 0;
+    transform: translatex(0);
     transition: all 0.5s ease-in;
   }
 }
@@ -1437,12 +1437,12 @@ h3 {
 
 @keyframes imageLeft {
   from {
-    left: -100px;
+    transform: translatex(-100px);
     transition: all 0.5s ease-in;
   }
 
   to {
-    left: 0;
+    transform: translatex(0);
     transition: all 0.5s ease-in;
   }
 }
