@@ -387,7 +387,7 @@ h3 {
 }
 
 .layout-1 #celek .block-2 .benefits-block-image {
-  left: -100px;
+  transform: translateX(-100px);
 }
 
 .layout-1 #celek .params-ul {
@@ -571,7 +571,7 @@ h3 {
 
 .layout-1 #celek .block-2 .block-2-text-wrapper-right {
   position: relative;
-  right: -100px;
+  transform: translateX(100px);
 }
 
 .layout-1 #celek .block-2 .circles-wrapper {
