@@ -197,6 +197,10 @@ h3 {
 
 /*BLOCK 1*/
 
+.layout-1 #celek .block-1 .header__lineBreak {
+  display: block;
+}
+
 .layout-1 #celek .block-1 .row-wrapper {
   display: flex;
   justify-content: space-between;
@@ -210,11 +214,13 @@ h3 {
   gap: 90px;
   padding-top: 99px;
   padding-bottom: 99px;
+  position: relative;
 }
 
 .layout-1 #celek .benefit-component,
 .layout-1 #celek .benefit-component-clear {
   width: 100%;
+  max-width: 522px;
 }
 
 .layout-1 #celek .benefit-component {
@@ -274,21 +280,28 @@ h3 {
 }
 
 .layout-1 #celek .block-1 .benefity-image {
-  width: 80%;
-  position: relative;
-  right: -40px;
+  width: 100%;
+  max-width: 553px;
+  position: absolute;
+  z-index: 1;
+  left: 15%;
+  top: 0;
+  opacity: 0;
 }
 
 .layout-1 #celek .big-heading-wrapper__heading {
   font-size: 50px;
   line-height: 60px;
   font-weight: 600;
+  position: relative;
+  z-index: 5;
 }
 
 .layout-1 #celek .block-1 .big-heading-wrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
 }
 
 .layout-1 #celek .block-1 .benefit-component {
@@ -408,7 +421,6 @@ h3 {
   }
   .layout-0 #celek .block-1 .benefity-image {
     width: 100%;
-    position: relative;
     z-index: 2;
     right: 21px;
   }
@@ -452,6 +464,14 @@ h3 {
     width: 100%;
   }
 
+  .mobile #celek .block-1 .header__lineBreak {
+    display: inline;
+  }
+  
+  .layout-1 #celek .benefit-component-clear {
+    min-height: 350px;
+  }
+
   .mobile #celek .container {
     padding-left: 15px;
     padding-right: 15px;
@@ -482,7 +502,9 @@ h3 {
   }
 
   .mobile #celek .block-1 .benefity-image {
-    left: 10px;
+    left: 0;
+    right: unset;
+    top: 4%;
   }
   .mobile #celek .block-1 .header-for-benefit-component {
     font-size: 20px;
@@ -780,6 +802,10 @@ h3 {
 
   .mobile #celek .circleWrapper {
     padding: 0;
+  }
+
+  .mobile #celek .benefits-block {
+    padding-top: 71px;
   }
 }
 
@@ -1116,7 +1142,6 @@ h3 {
     display: flex;
     justify-content: space-between;
     flex-direction: column-reverse;
-    margin-bottom: 41.5px;
   }
 }
 
@@ -1125,11 +1150,6 @@ h3 {
 .layout-1 #celek .block-slider {
   padding-top: 43px;
   padding-bottom: 43px;
-}
-
-.layout-1 #celek .slider__header {
-  display: flex;
-  flex-direction: column;
 }
 
 .layout-1 #celek .slider__arrowLeft {
@@ -1211,22 +1231,125 @@ h3 {
   top: 50px;
 }
 
+.layout-1 #celek .sliderB__header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  margin-bottom: 20px;
+}
+
+.layout-1 #celek .sliderB__header .header-top-border {
+  margin-bottom: 0;
+}
+
+.layout-1 #celek .sliderB__container {
+  display: flex;
+  align-items: center;
+  gap: 51px;
+}
+
+.layout-1 #celek .block-sliderB .slider__arrowContainerLeft, .layout-1 #celek .block-sliderB .slider__arrowContainerRight {
+  left: unset;
+  right: unset;
+}
+
+.layout-1 #celek .sliderB__item {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0px 3px 30px #00000029;
+  background-color: white;
+  position: absolute;
+  z-index: 5;
+  opacity: 0;
+}
+
+.layout-1 #celek .sliderB {
+  position: relative;
+  z-index: 5;
+  min-height: 359px;
+}
+
+.layout-1 #celek .sliderB__circles {
+display: flex;
+justify-content: center;
+gap: 7px;
+margin-top: 27px;
+}
+
+.layout-1 #celek .sliderB__circle {
+  width: 16px;
+  height: 16px;
+  background-color: #E9E9E9;
+  display: block;
+  border-radius: 100%;
+}
+
+.layout-1 #celek .sliderB__wrapper {
+  position: relative;
+  width: 100%;
+  min-height: 359px;
+  position: relative;
+  z-index: 5;
+  }
+
+ .layout-1 #celek .sliderB__dummyOne {
+  width: 104.7%;
+  height: 74%;
+  display: block;
+  position: absolute;
+  left: -20px;
+  top: 20px;
+  z-index: 2;
+  box-shadow: 0px 3px 30px #00000029;
+  background-color: white;
+}
+
+.layout-1 #celek .sliderB__dummyTwo {
+  width: 109.2%;
+  height: 65%;
+  display: block;
+  position: absolute;
+  left: -40px;
+  top: 40px;
+  z-index: 1;
+  box-shadow: 0px 3px 30px #00000029;
+  background-color: white;
+}
+
+.layout-1 #celek .block-sliderB .slider__container::before, .layout-1 #celek .block-sliderB .slider__container::after {
+  display: none;
+}
+
 .layout-1 #celek .slider__item:hover {
   cursor: pointer;
   box-shadow: 0px 3px 20px #0000004d;
   transition: all 0.5s ease;
 }
 
+
+
+.layout-1 #celek .sliderB__contentText {
+  padding-left: 45px;
+  padding-right: 5%;
+}
+
+.layout-1 #celek .sliderB__textHeader {
+  font-size: 16px;
+  line-height: 24px;
+  margin-bottom: 18px;
+}
+
+.layout-1 #celek .sliderB__text {
+  font-size: 14px;
+  line-height: 26px;
+}
+
 .layout-1 #celek .slider__image {
   max-width: 182px;
   display: block;
-}
-
-.layout-1 #celek .slider__header {
-  font-size: 16px;
-  line-height: 18px;
-  font-weight: 700;
-  margin-bottom: 8px;
 }
 
 .layout-1 #celek .slider__description {
@@ -1447,7 +1570,7 @@ h3 {
   }
 }
 
-.layout-1 #celek .table__item--visible {
+.layout-1 #celek .item--visible {
   animation-duration: 1s;
   animation-delay: 0.5s;
   animation-fill-mode: forwards;
@@ -1524,7 +1647,7 @@ h3 {
   }
 }
 
-.layout-1 #celek .block-2-circle-imageOne-inView, .layout-1 #celek .block-2-circle-imageTwo-inView, .layout-1 #celek .block-2-circle-imageThree-inView {
+.layout-1 #celek .block-2-circle-inView {
   animation-duration: 3s;
   animation-fill-mode: forwards;
   animation-name: circleOpacity;
@@ -1532,7 +1655,7 @@ h3 {
 
 @keyframes circleOpacity {
   from {
-    opacity: 0.2;
+    opacity: 0;
     transition: all 0.5s ease-in;
   }
 
@@ -1540,16 +1663,6 @@ h3 {
     opacity: 1;
     transition: all 0.5s ease-in;
   }
-}
-
-.layout-1 #celek .block-2-circle-imageOne-inView {
-  animation-delay: 0.5s;
-}
-.layout-1 #celek .block-2-circle-imageTwo-inView {
-  animation-delay: 1s;
-}
-.layout-1 #celek .block-2-circle-imageThree-inView {
-  animation-delay: 1.5s;
 }
 
 .quoteBlock-inView {
@@ -1605,6 +1718,25 @@ h3 {
 
   to {
     top:0;
+    transition: all 0.5s ease-in;
+  }
+}
+
+.benefity-image-inView {
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-delay: 0.5s;
+  animation-name: blockOneOpacity;
+}
+
+@keyframes blockOneOpacity {
+  from {
+    opacity: 0;
+    transition: all 0.5s ease-in;
+  }
+
+  to {
+    opacity: 1;
     transition: all 0.5s ease-in;
   }
 }
