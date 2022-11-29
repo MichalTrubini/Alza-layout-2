@@ -85,7 +85,7 @@ tableItems.forEach((item, i) => {
       if (tableItem.classList.contains("item--visible")) tableItem.classList.remove("item--visible");
     });
 
-    item.classList.add("table__item--visible");
+    item.classList.add("item--visible");
     item.parentElement.style.height = item.offsetHeight + "px";
   });
 });
@@ -109,7 +109,7 @@ const tableItemVisible = document.querySelector("#celek .block-10 .item--visible
 tableItemVisible.parentElement.style.height = tableItemVisible.offsetHeight + "px";
 
 /*-----------------------------------------------------------------------------------*/
-/*	 4.SLIDER TYPEB
+/*	 4.SLIDER TYPE-B
 /*-----------------------------------------------------------------------------------*/
 
 //-->variables declaration
@@ -118,7 +118,11 @@ const sliderB = document.querySelectorAll("#celek .sliderB");
 const nxtBtnB = document.querySelector("#celek .sliderB__arrowContainerRight");
 const preBtnB = document.querySelector("#celek .sliderB__arrowContainerLeft");
 const sliderBItems = document.querySelectorAll(".sliderB__item");
-const sliderCircles = document.querySelectorAll('.sliderB__circles');
+const sliderCircles = document.querySelectorAll(".sliderB__circle");
+
+const sliderItemVisible = document.querySelector("#celek .block-sliderB .item--visible");
+
+sliderItemVisible.parentElement.style.height = sliderItemVisible.offsetHeight + "px";
 
 let clickCounter = 0;
 
@@ -129,19 +133,29 @@ nxtBtnB.addEventListener("click", () => {
     if ((i === clickCounter) & (i < sliderBItems.length - 1)) {
       item.classList.remove("item--visible");
       item.nextElementSibling.classList.add("item--visible");
+      item.parentElement.style.height = item.offsetHeight + 'px'
     }
   });
   if (clickCounter < sliderBItems.length - 1) clickCounter += 1;
+  sliderCircles.forEach((item, i) => {
+    if (i === clickCounter) item.classList.add("sliderB__circle--selected");
+    else item.classList.remove("sliderB__circle--selected");
+  });
 });
 
 preBtnB.addEventListener("click", () => {
   sliderBItems.forEach((item, i) => {
-    if ((i === clickCounter) & clickCounter > 0) {
+    if ((i === clickCounter) & (clickCounter > 0)) {
       item.classList.remove("item--visible");
       item.previousElementSibling.classList.add("item--visible");
+      item.parentElement.style.height = item.offsetHeight + 'px'
     }
   });
   if (clickCounter > 0) clickCounter -= 1;
+  sliderCircles.forEach((item, i) => {
+    if (i === clickCounter) item.classList.add("sliderB__circle--selected");
+    else item.classList.remove("sliderB__circle--selected");
+  });
 });
 
 /*-----------------------------------------------------------------------------------*/
@@ -170,6 +184,8 @@ let observer = new IntersectionObserver((entries) => {
   const sliderItemsOne = entries.filter((entry) => entry.target.classList.contains("slider__itemOne"));
   const sliderItemsTwo = entries.filter((entry) => entry.target.classList.contains("slider__itemTwo"));
   const blockOneImage = entries.filter((entry) => entry.target.classList.contains("benefity-image"));
+  const sliderDummyOne = entries.filter((entry) => entry.target.classList.contains("sliderB__dummyOne"));
+  const sliderDummyTwo = entries.filter((entry) => entry.target.classList.contains("sliderB__dummyTwo"));
 
   //if element is intersecting (that means, in viewport), class is added to the element
   //class then defines animation using keyframes
@@ -178,6 +194,18 @@ let observer = new IntersectionObserver((entries) => {
     if (item.isIntersecting) {
       item.target.classList.add("slider__item-inView");
       item.target.style.animationDelay = 0.5 * i + "s";
+    }
+  });
+
+  sliderDummyOne.forEach((item) => {
+    if (item.isIntersecting) {
+      item.target.classList.add("sliderB__dummyOne-inView");
+    }
+  });
+
+  sliderDummyTwo.forEach((item) => {
+    if (item.isIntersecting) {
+      item.target.classList.add("sliderB__dummyTwo-inView");
     }
   });
 
