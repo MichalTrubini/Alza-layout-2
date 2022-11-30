@@ -1009,6 +1009,7 @@ h3 {
   width: 70.9%;
   position: relative;
   box-shadow: 20px 3px 30px #00000029;
+  overflow: hidden;
 }
 
 .layout-1 #celek .table__text {
@@ -1064,11 +1065,15 @@ h3 {
     padding: 53px 29px 50px 0;
   }
 
-  .layout-1 #celek .table__image {
+  .layout-0 #celek .table__image {
     max-width: 244px;
   }
-  .layout-1 #celek .table__contentText {
+  .layout-0 #celek .table__contentText {
     padding: 20px 42px 20px 34px;
+  }
+
+  .layout-0 #celek .table__item {
+    align-items: flex-start;
   }
 }
 
@@ -1270,6 +1275,7 @@ h3 {
   min-height: 359px;
   box-shadow: 0px 3px 30px #00000029;
   background-color: white;
+  overflow:hidden;
 }
 
 .layout-1 #celek .sliderB__circles {
@@ -1343,6 +1349,11 @@ h3 {
 .layout-1 #celek .sliderB__contentText {
   padding-left: 45px;
   padding-right: 5%;
+
+}
+
+.layout-1 #celek .item__visible {
+opacity: 1;
 }
 
 .layout-1 #celek .sliderB__textHeader {
@@ -1504,11 +1515,11 @@ h3 {
   .mobile #celek .sliderB__header {
     flex-direction: column;
     align-items: flex-start;
-}
+  }
 
-.mobile #celek .header-top-border__sliderB {
-  display: none;
-}
+  .mobile #celek .header-top-border__sliderB {
+    display: none;
+  }
 }
 
 /*QUOTE*/
@@ -1645,7 +1656,7 @@ h3 {
 
 .layout-1 #celek .item--visible {
   animation-duration: 1s;
-  animation-delay: 0.5s;
+  animation-delay: 0.3s;
   animation-fill-mode: forwards;
   animation-name: elementPopIn;
 }
@@ -1658,6 +1669,82 @@ h3 {
 
   to {
     opacity: 1;
+    transition: all 0.5s ease-in;
+  }
+}
+
+.layout-1 #celek .item--visibleRight {
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-name: elementPopRight;
+}
+
+@keyframes elementPopRight {
+  from {
+    transform: translateX(100px);
+    transition: all 0.5s ease-in;
+  }
+
+  to {
+    transform: translateX(0px);
+    transition: all 0.5s ease-in;
+  }
+}
+
+.layout-1 #celek .item--visibleRightReverse {
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-name: elementPopRightReverse;
+}
+
+@keyframes elementPopRightReverse {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+    transition: all 0.5s ease-in;
+  }
+
+  to {
+    transform: translateX(100px);
+    opacity: 0;
+    transition: all 0.5s ease-in;
+  }
+}
+
+.layout-1 #celek .item--visibleLeft {
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-name: elementPopLeft;
+}
+
+@keyframes elementPopLeft {
+  from {
+    transform: translateX(-100px);
+    transition: all 0.5s ease-in;
+  }
+
+  to {
+    transform: translateX(0px);
+    transition: all 0.5s ease-in;
+  }
+}
+
+.layout-1 #celek .item--visibleLeftReverse {
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-name: elementPopLeftReverse;
+}
+
+@keyframes elementPopLeftReverse {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+    transition: all 0.5s ease-in;
+  }
+
+  to {
+    transform: translateX(-100px);
+    opacity: 0;
     transition: all 0.5s ease-in;
   }
 }

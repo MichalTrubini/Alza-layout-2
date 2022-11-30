@@ -131,9 +131,17 @@ let clickCounter = 0;
 nxtBtnB.addEventListener("click", () => {
   sliderBItems.forEach((item, i) => {
     if ((i === clickCounter) & (i < sliderBItems.length - 1)) {
-      item.classList.remove("item--visible");
-      item.nextElementSibling.classList.add("item--visible");
-      item.parentElement.style.height = item.offsetHeight + 'px'
+      item.firstElementChild.classList.add("item--visibleRightReverse");
+      item.lastElementChild.classList.add("item--visibleLeftReverse");
+      setTimeout(() => {
+        item.classList.remove("item--visible");
+        item.firstElementChild.classList.remove("item--visibleRightReverse");
+        item.lastElementChild.classList.remove("item--visibleLeftReverse");
+        item.nextElementSibling.classList.add("item--visible");
+        item.nextElementSibling.firstElementChild.classList.add("item--visibleRight");
+        item.nextElementSibling.lastElementChild.classList.add("item--visibleLeft");
+        item.parentElement.style.height = item.offsetHeight + "px";
+      }, 750);
     }
   });
   if (clickCounter < sliderBItems.length - 1) clickCounter += 1;
@@ -146,9 +154,17 @@ nxtBtnB.addEventListener("click", () => {
 preBtnB.addEventListener("click", () => {
   sliderBItems.forEach((item, i) => {
     if ((i === clickCounter) & (clickCounter > 0)) {
-      item.classList.remove("item--visible");
-      item.previousElementSibling.classList.add("item--visible");
-      item.parentElement.style.height = item.offsetHeight + 'px'
+      item.firstElementChild.classList.add("item--visibleRightReverse");
+      item.lastElementChild.classList.add("item--visibleLeftReverse");
+      setTimeout(() => {
+        item.classList.remove("item--visible");
+        item.firstElementChild.classList.remove("item--visibleRightReverse");
+        item.lastElementChild.classList.remove("item--visibleLeftReverse");
+        item.previousElementSibling.classList.add("item--visible");
+        item.previousElementSibling.firstElementChild.classList.add("item--visibleRight");
+        item.previousElementSibling.lastElementChild.classList.add("item--visibleLeft");
+        item.parentElement.style.height = item.offsetHeight + "px";
+      }, 750);
     }
   });
   if (clickCounter > 0) clickCounter -= 1;
