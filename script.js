@@ -122,7 +122,11 @@ const sliderCircles = document.querySelectorAll(".sliderB__circle");
 
 const sliderItemVisible = document.querySelector("#celek .block-sliderB .item--visible");
 
-sliderItemVisible.parentElement.style.height = sliderItemVisible.offsetHeight + "px";
+window.addEventListener('DOMContentLoaded', (event) => {
+    sliderItemVisible.parentElement.style.height = sliderItemVisible.offsetHeight + "px";
+  });
+
+
 
 let clickCounter = 0;
 
