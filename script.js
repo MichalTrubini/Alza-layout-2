@@ -137,6 +137,8 @@ nxtBtnB.addEventListener("click", () => {
         item.classList.remove("item--visible");
         item.firstElementChild.classList.remove("item--visibleRightReverse");
         item.lastElementChild.classList.remove("item--visibleLeftReverse");
+        item.firstElementChild.classList.remove("item--visibleRight");
+        item.lastElementChild.classList.remove("item--visibleLeft");
         item.nextElementSibling.classList.add("item--visible");
         item.nextElementSibling.firstElementChild.classList.add("item--visibleRight");
         item.nextElementSibling.lastElementChild.classList.add("item--visibleLeft");
@@ -160,6 +162,8 @@ preBtnB.addEventListener("click", () => {
         item.classList.remove("item--visible");
         item.firstElementChild.classList.remove("item--visibleRightReverse");
         item.lastElementChild.classList.remove("item--visibleLeftReverse");
+        item.firstElementChild.classList.remove("item--visibleRight");
+        item.lastElementChild.classList.remove("item--visibleLeft");
         item.previousElementSibling.classList.add("item--visible");
         item.previousElementSibling.firstElementChild.classList.add("item--visibleRight");
         item.previousElementSibling.lastElementChild.classList.add("item--visibleLeft");
