@@ -31,15 +31,16 @@ const sliderItemsTypeA = [...document.querySelectorAll("#celek .slider__item")];
 const slider = document.querySelector("#celek .slider");
 const sliderWidth = slider.offsetWidth;
 let style = getComputedStyle(slider);
+let sliderGap = Number(style.gap.replace("px", ""));
 let sliderPadding = Number(style.padding.replace("px", ""));
 
 //-->functions
 
 sliderItemsTypeA.forEach((item) => {
-  if (screenWidth >= 1250) item.style.width = (sliderWidth - sliderPadding * 2) / 4 + "px"; //4 items visible
-  else if (screenWidth > 767) item.style.width = (sliderWidth - sliderPadding * 2) / 3 + "px"; // 3 items
-  else if (screenWidth > 525) item.style.width = (sliderWidth - sliderPadding * 2) / 2 + "px"; // 2 items
-  else item.style.width = sliderWidth - sliderPadding + "px"; // 1 item
+  if (screenWidth >= 1250) item.style.width = (sliderWidth - sliderGap * 3 - sliderPadding * 2) / 4 + "px"; //4 items visible
+  else if (screenWidth > 767) item.style.width = (sliderWidth - sliderGap * 2 - sliderPadding * 2) / 3 + "px"; // 3 items
+  else if (screenWidth > 525) item.style.width = (sliderWidth - sliderGap * 1 - sliderPadding * 2) / 2 + "px"; // 2 items
+  else item.style.width = (sliderWidth - sliderPadding * 2) + "px"; // 1 item
 });
 
 /*-----------------------------------------------------------------------------------*/
@@ -64,11 +65,11 @@ sliders.forEach((item, i) => {
   let containerWidth = item.children[0].offsetWidth;
 
   nxtBtn[i].addEventListener("click", () => {
-    item.scrollLeft += containerWidth;
+    item.scrollLeft += containerWidth +sliderGap;
   });
 
   preBtn[i].addEventListener("click", () => {
-    item.scrollLeft -= containerWidth;
+    item.scrollLeft -= containerWidth +sliderGap;
   });
 });
 
@@ -76,17 +77,17 @@ sliders.forEach((item, i) => {
 /*	 3.TABLE
 /*-----------------------------------------------------------------------------------*/
 
-const tableHeader = document.querySelectorAll(".table__headerItemContainer ");
-const tableItems = document.querySelectorAll(".table__item");
+const tableHeader = document.querySelectorAll("#celek .table__headerItemContainer ");
+const tableItems = document.querySelectorAll("#celek .table__item");
 
 tableItems.forEach((item, i) => {
   tableHeader[i].addEventListener("click", () => {
     tableItems.forEach((tableItem) => {
       if (tableItem.classList.contains("item--visible")) tableItem.classList.remove("item--visible");
+      item.parentElement.style.height = item.offsetHeight + "px";
     });
 
     item.classList.add("item--visible");
-    item.parentElement.style.height = item.offsetHeight + "px";
   });
 });
 
@@ -104,9 +105,11 @@ tableHeader.forEach((item) => {
   });
 });
 
-const tableItemVisible = document.querySelector("#celek .block-10 .item--visible");
+const tableItemVisible = document.querySelector("#celek .block-10 .table__header");
 
-tableItemVisible.parentElement.style.height = tableItemVisible.offsetHeight + "px";
+window.addEventListener("DOMContentLoaded", (event) => {
+  tableItemVisible.parentElement.style.height = tableItemVisible.offsetHeight + "px";
+});
 
 /*-----------------------------------------------------------------------------------*/
 /*	 4.SLIDER TYPE-B
@@ -117,16 +120,14 @@ tableItemVisible.parentElement.style.height = tableItemVisible.offsetHeight + "p
 const sliderB = document.querySelectorAll("#celek .sliderB");
 const nxtBtnB = document.querySelector("#celek .sliderB__arrowContainerRight");
 const preBtnB = document.querySelector("#celek .sliderB__arrowContainerLeft");
-const sliderBItems = document.querySelectorAll(".sliderB__item");
-const sliderCircles = document.querySelectorAll(".sliderB__circle");
+const sliderBItems = document.querySelectorAll("#celek .sliderB__item");
+const sliderCircles = document.querySelectorAll("#celek .sliderB__circle");
 
 const sliderItemVisible = document.querySelector("#celek .block-sliderB .item--visible");
 
-window.addEventListener('DOMContentLoaded', (event) => {
-    sliderItemVisible.parentElement.style.height = sliderItemVisible.offsetHeight + "px";
-  });
-
-
+window.addEventListener("DOMContentLoaded", (event) => {
+  sliderItemVisible.parentElement.style.height = sliderItemVisible.offsetHeight + "px";
+});
 
 let clickCounter = 0;
 

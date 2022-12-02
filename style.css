@@ -20,6 +20,7 @@ body {
 #celek a {
   text-decoration: none;
   color: inherit;
+  font-family: "Ubuntu", sans-serif;
 }
 
 #celek p {
@@ -34,12 +35,12 @@ h3 {
   font-weight: 700;
 }
 
-.layout-1 #celek .container {
+ #celek .container {
   padding-left: 58px;
   padding-right: 58px;
 }
 
-.layout-1 #celek {
+ #celek {
   width: 100%;
   max-width: 1250px;
   margin: auto;
@@ -52,43 +53,43 @@ h3 {
   background: linear-gradient(90deg, rgba(229, 0, 64, 1) 0%, rgba(115, 0, 38, 1) 100%);
 }
 
-.layout-1 #celek .block-long-text {
+ #celek .block-long-text {
   margin-top: 23px;
   font-size: 16px;
   line-height: 26px;
 }
 
-.layout-1 #celek .custom-header-with-top-border {
+ #celek .custom-header-with-top-border {
   font-size: 26px;
   font-weight: bold;
   line-height: 36px;
 }
 
-.layout-1 #celek .header-top-border {
+ #celek .header-top-border {
   margin-bottom: 15.5px;
   width: 0px;
   height: 5px;
   background-color: #e5004b;
 }
 
-.layout-1 #celek .gray-block-divider {
+ #celek .gray-block-divider {
   height: 4px;
   width: 100%;
   background-color: #e9e9e9;
 }
 
-.layout-1 #celek .text-image-wrapper {
+ #celek .text-image-wrapper {
   display: flex;
   justify-content: flex-start;
   align-items: center;
   overflow: hidden;
 }
 
-.layout-1 #celek .image-wrapper {
+ #celek .image-wrapper {
   position: relative;
 }
 
-.layout-1 #celek .image-gradient-div {
+ #celek .image-gradient-div {
   width: 170px;
   height: 100%;
   background: rgb(255, 255, 255);
@@ -97,60 +98,60 @@ h3 {
   top: 0;
 }
 
-.layout-1 #celek .image-gradient-left-div {
+ #celek .image-gradient-left-div {
   left: 0;
   background: linear-gradient(90deg, rgba(255, 255, 255, 1) 16%, rgba(255, 255, 255, 0) 100%);
 }
 
-.layout-1 #celek .image-gradient-right-div {
+ #celek .image-gradient-right-div {
   right: 0;
   background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 85%);
 }
 
-.layout-1 #celek .block-imageContainer {
+ #celek .block-imageContainer {
   width: 50.3%;
 }
 
-.layout-1 #celek .block-text {
+ #celek .block-text {
   width: 49.7%;
 }
 
-.layout-1 #celek .block-image {
+ #celek .block-image {
   width: 100%;
   display: block;
 }
 
-.layout-1 #celek .block-padding-left {
+ #celek .block-padding-left {
   padding-left: 58px;
 }
 
-.layout-1 #celek .block-padding-right {
+ #celek .block-padding-right {
   padding-right: 79px;
 }
 
 @media screen and (max-width: 975px) {
-  .layout-1 #celek .block-imageContainer {
+   #celek .block-imageContainer {
     width: 52%;
   }
 
-  .layout-1 #celek .block-text {
+   #celek .block-text {
     width: 48%;
   }
 
-  .layout-1 #celek .custom-header-with-top-border {
+   #celek .custom-header-with-top-border {
     font-size: 22px;
     line-height: 30px;
   }
 
-  .layout-1 #celek .block-long-text {
+   #celek .block-long-text {
     font-size: 14px;
   }
 
-  .layout-1 #celek .block-padding-left {
+   #celek .block-padding-left {
     padding-left: 38px;
   }
 
-  .layout-1 #celek .block-padding-right {
+   #celek .block-padding-right {
     padding-right: 38px;
   }
 }
@@ -173,8 +174,8 @@ h3 {
     width: 100%;
   }
 
-  .layout-1 #celek .block-padding-left,
-  .layout-1 #celek .block-padding-right {
+   #celek .block-padding-left,
+   #celek .block-padding-right {
     padding: 0;
   }
 
@@ -197,18 +198,18 @@ h3 {
 
 /*BLOCK 1*/
 
-.layout-1 #celek .block-1 .header__lineBreak {
+ #celek .block-1 .header__lineBreak {
   display: block;
 }
 
-.layout-1 #celek .block-1 .row-wrapper {
+ #celek .block-1 .row-wrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 89px;
 }
 
-.layout-1 #celek .block-1 {
+ #celek .block-1 {
   display: flex;
   flex-direction: column;
   gap: 90px;
@@ -217,50 +218,50 @@ h3 {
   position: relative;
 }
 
-.layout-1 #celek .benefit-component,
-.layout-1 #celek .benefit-component-clear {
+ #celek .benefit-component,
+ #celek .benefit-component-clear {
   width: 100%;
   max-width: 522px;
 }
 
-.layout-1 #celek .benefit-component {
+ #celek .benefit-component {
   padding: 63px 22px 51px;
   text-align: center;
 }
 
-.layout-1 #celek .block-1 .benefit-component:hover {
+ #celek .block-1 .benefit-component:hover {
   background-color: white;
   background-image: none;
   box-shadow: 0px 5px 50px #00000059;
   transition: all 0.5s ease;
 }
 
-.layout-1 #celek .block-1 .benefit-component:hover > .benefit-component__imageContainer {
+ #celek .block-1 .benefit-component:hover > .benefit-component__imageContainer {
   top: -20px;
   transition: all 0.5s ease;
 }
 
-.layout-1 #celek .benefit-component__imageContainer {
+ #celek .benefit-component__imageContainer {
   position: relative;
   top: 0;
   transition: all 0.5s ease;
 }
 
-.layout-1 #celek .block-1 .circle-bg {
+ #celek .block-1 .circle-bg {
   position: absolute;
   z-index: 5;
   left: 51%;
   transform: translateX(-49%);
 }
 
-.layout-1 #celek .block-1 .circle {
+ #celek .block-1 .circle {
   position: absolute;
   z-index: 5;
   left: 51%;
   transform: translateX(-52%);
 }
 
-.layout-1 #celek .circle-special {
+ #celek .circle-special {
   top: -87px;
   width: 130px;
   position: absolute;
@@ -269,17 +270,17 @@ h3 {
   transform: translateX(-51%);
 }
 
-.layout-1 #celek .block-1 .circle {
+ #celek .block-1 .circle {
   top: -93px;
   width: 130px;
 }
 
-.layout-1 #celek .block-1 .circle-bg {
+ #celek .block-1 .circle-bg {
   width: 235px;
   top: -140px;
 }
 
-.layout-1 #celek .block-1 .benefity-image {
+ #celek .block-1 .benefity-image {
   width: 100%;
   max-width: 553px;
   position: absolute;
@@ -289,7 +290,7 @@ h3 {
   opacity: 0;
 }
 
-.layout-1 #celek .big-heading-wrapper__heading {
+ #celek .big-heading-wrapper__heading {
   font-size: 50px;
   line-height: 60px;
   font-weight: 600;
@@ -297,14 +298,14 @@ h3 {
   z-index: 5;
 }
 
-.layout-1 #celek .block-1 .big-heading-wrapper {
+ #celek .block-1 .big-heading-wrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: relative;
 }
 
-.layout-1 #celek .block-1 .benefit-component {
+ #celek .block-1 .benefit-component {
   background-image: linear-gradient(295deg, #e9e9e9 0%, #ffffff 100%);
   box-shadow: 0px 5px 20px #00000059;
   border: 1px solid #ffffff;
@@ -314,7 +315,7 @@ h3 {
   transition: all 0.5s ease;
 }
 
-.layout-1 #celek .block-1 .benefit-component-line {
+ #celek .block-1 .benefit-component-line {
   width: 100%;
   z-index: 1;
   height: 4px;
@@ -329,17 +330,17 @@ h3 {
   margin-bottom: 54px;
 }
 
-.layout-1 #celek .block-1 .header-for-benefit-component {
+ #celek .block-1 .header-for-benefit-component {
   font-size: 26px;
   line-height: 32px;
   margin-bottom: 12px;
 }
 
-.layout-1 #celek .block-1 .header-for-benefit-component--mgFix {
+ #celek .block-1 .header-for-benefit-component--mgFix {
   margin-bottom: 5px;
 }
 
-.layout-1 #celek .block-1 .text-for-benefit-component {
+ #celek .block-1 .text-for-benefit-component {
   font-size: 18px;
   line-height: 26px;
   color: #313131;
@@ -347,7 +348,7 @@ h3 {
   padding: 0 40px;
 }
 
-.layout-1 #celek .block-1 .benefit-component-button {
+ #celek .block-1 .benefit-component-button {
   background-color: #e3004a;
   box-shadow: 0px 10px 20px #0000004d;
   border: 1px solid #ffffff;
@@ -361,26 +362,26 @@ h3 {
   transition: all 0.5s ease;
 }
 
-.layout-1 #celek .block-1 .benefit-component-button:hover {
+ #celek .block-1 .benefit-component-button:hover {
   cursor: pointer;
   background-color: #85002c;
   transition: all 0.5s ease;
 }
 
-.layout-1 #celek .benefit-component-button__text {
+ #celek .benefit-component-button__text {
   font-size: 18px;
   color: white;
   font-weight: 700;
   text-shadow: 0px 15px 40px #00000033;
 }
 
-.layout-1 #celek .block-1 .secondary-text-for-benefit-component {
+ #celek .block-1 .secondary-text-for-benefit-component {
   color: #00000033;
   font-size: 16px;
   line-height: 26px;
 }
 
-.layout-1 #celek .text-for-benefit-component-special__container {
+ #celek .text-for-benefit-component-special__container {
   display: flex;
   justify-content: center;
   gap: 30px;
@@ -388,22 +389,22 @@ h3 {
   margin-top: 9px;
 }
 
-.layout-1 #celek .block-1 .text-for-benefit-component-special {
+ #celek .block-1 .text-for-benefit-component-special {
   font-size: 20px;
   font-weight: 500;
   text-decoration: underline;
 }
 
-.layout-1 #celek .benefits-block-image {
+ #celek .benefits-block-image {
   width: 35%;
   position: relative;
 }
 
-.layout-1 #celek .block-2 .benefits-block-image {
+ #celek .block-2 .benefits-block-image {
   transform: translateX(-100px);
 }
 
-.layout-1 #celek .params-ul {
+ #celek .params-ul {
   width: 70%;
 }
 
@@ -468,7 +469,7 @@ h3 {
     display: inline;
   }
 
-  .layout-1 #celek .benefit-component-clear {
+   #celek .benefit-component-clear {
     min-height: 350px;
   }
 
@@ -559,62 +560,62 @@ h3 {
 
 /*BLOCK 2*/
 
-.layout-1 #celek .block-2 {
+ #celek .block-2 {
   padding-top: 108px;
   padding-bottom: 83px;
 }
 
-.layout-1 #celek .block-2 .heading {
+ #celek .block-2 .heading {
   margin-top: 26.67px;
   font-size: 33px;
   line-height: 46px;
 }
 
-.layout-1 #celek .block-2 .block-2-text-wrapper {
+ #celek .block-2 .block-2-text-wrapper {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
   gap: 74px;
 }
 
-.layout-1 #celek .block-2 .block-2-text-wrapper-left {
+ #celek .block-2 .block-2-text-wrapper-left {
   max-width: 63%;
 }
 
-.layout-1 #celek .block-2 .block-2-text-wrapper-left .text {
+ #celek .block-2 .block-2-text-wrapper-left .text {
   margin-top: 18px;
   font-size: 16px;
   line-height: 26px;
 }
 
-.layout-1 #celek .block-2 .block-2-text-wrapper-right > img {
+ #celek .block-2 .block-2-text-wrapper-right > img {
   width: 75%;
 }
 
-.layout-1 #celek .block-2 .block-2-text-wrapper-right {
+ #celek .block-2 .block-2-text-wrapper-right {
   position: relative;
   transform: translateX(100px);
 }
 
-.layout-1 #celek .block-2 .circles-wrapper {
+ #celek .block-2 .circles-wrapper {
   display: flex;
   justify-content: space-between;
   margin-top: 81px;
   position: relative;
 }
 
-.layout-1 #celek .circleWrapper {
+ #celek .circleWrapper {
   padding: 0 58px;
 }
 
-.layout-1 #celek .block-2 .circles-wrapper .circle {
+ #celek .block-2 .circles-wrapper .circle {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 33%;
 }
 
-.layout-1 #celek .block-2 .circles-wrapper .circle-text {
+ #celek .block-2 .circles-wrapper .circle-text {
   text-align: center;
   font-style: italic;
   font-weight: bold;
@@ -625,7 +626,7 @@ h3 {
   padding: 0;
 }
 
-.layout-1 #celek .gray-divider-in-image {
+ #celek .gray-divider-in-image {
   height: 9px;
   width: 1%;
   background-color: #e9e9e9;
@@ -634,17 +635,17 @@ h3 {
   z-index: 1;
 }
 
-.layout-1 #celek .gray-divider {
+ #celek .gray-divider {
   margin-top: 31px;
   height: 9px;
   background-color: #e9e9e9;
 }
 
-.layout-1 .gray-divider--visibility {
+ .gray-divider--visibility {
   display: none;
 }
 
-.layout-1 #celek .benefits-block {
+ #celek .benefits-block {
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -652,11 +653,11 @@ h3 {
   padding-top: 103px;
 }
 
-.layout-1 #celek .ul-block {
+ #celek .ul-block {
   margin-top: 35.5px;
 }
 
-.layout-1 #celek .params-li {
+ #celek .params-li {
   font-size: 16px;
   line-height: 24px;
   padding: 15px 0px 15px 40px;
@@ -665,7 +666,7 @@ h3 {
   position: relative;
 }
 
-.layout-1 #celek .params-li::before {
+ #celek .params-li::before {
   content: "";
   width: 20px;
   height: 20px;
@@ -676,11 +677,11 @@ h3 {
   top: 20px;
 }
 
-.layout-1 #celek .param-li-border {
+ #celek .param-li-border {
   border-bottom: 2px solid #cccccc;
 }
 
-.layout-1 #celek .block-2 .circles-wrapper .block-2-circle-image {
+ #celek .block-2 .circles-wrapper .block-2-circle-image {
   width: 160px;
   height: 160px;
   border: 2px solid white;
@@ -701,7 +702,7 @@ h3 {
     padding-bottom: 30px;
   }
 
-  .layout-1 #celek .block-2 .block-2-text-wrapper {
+   #celek .block-2 .block-2-text-wrapper {
     gap: 60px;
   }
 }
@@ -812,7 +813,7 @@ h3 {
 
 /*BLOCK 4*/
 
-.layout-1 #celek .block-4-image-wrapper {
+ #celek .block-4-image-wrapper {
   position: relative;
 }
 
@@ -835,7 +836,7 @@ h3 {
 
 /*BLOCK 5*/
 
-.layout-1 #celek .block-5-image-wrapper {
+ #celek .block-5-image-wrapper {
   position: relative;
 }
 
@@ -862,7 +863,7 @@ h3 {
 
 /*BLOCK 6*/
 
-.layout-1 #celek .block-6-image-wrapper {
+ #celek .block-6-image-wrapper {
   position: relative;
 }
 
@@ -885,19 +886,19 @@ h3 {
 
 /*BLOCK 7*/
 
-.layout-1 #celek .block-7 {
+ #celek .block-7 {
   padding-top: 54px;
   padding-bottom: 57px;
 }
 
-.layout-1 #celek .video-wrapper {
+ #celek .video-wrapper {
   position: relative;
   overflow: hidden;
   width: 100%;
   padding-top: 56.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
 }
 
-.layout-1 #celek .video-iframe {
+ #celek .video-iframe {
   position: absolute;
   top: 0;
   left: 0;
@@ -916,7 +917,7 @@ h3 {
 
 /*BLOCK 8*/
 
-.layout-1 #celek .block-image-fix {
+ #celek .block-image-fix {
   width: 75%;
   margin-left: auto;
 }
@@ -942,18 +943,18 @@ h3 {
   width: 100%;
 }
 
-.layout-1 #celek .block-10 {
+ #celek .block-10 {
   padding-top: 49px;
   padding-bottom: 57px;
 }
 
-.layout-1 #celek .table {
+ #celek .table {
   margin-top: 26px;
   display: flex;
   justify-content: flex-start;
 }
 
-.layout-1 #celek .table__header {
+ #celek .table__header {
   display: flex;
   flex-direction: column;
   gap: 3px;
@@ -963,36 +964,36 @@ h3 {
   z-index: 5;
 }
 
-.layout-1 #celek .table__headerItemContainer {
+ #celek .table__headerItemContainer {
   padding: 20px;
   background-color: #e9e9e9;
   position: relative;
   transition: all 0.5s ease;
 }
 
-.layout-1 #celek .table__headerItemContainer:hover {
+ #celek .table__headerItemContainer:hover {
   background-color: #e9e9e954;
   transition: all 0.5s ease;
   cursor: pointer;
 }
 
-.layout-1 #celek .table__headerItem {
+ #celek .table__headerItem {
   font-weight: 700;
   font-size: 14px;
   position: relative;
   z-index: 5;
 }
 
-.layout-1 #celek .table__headerItem--selected {
+ #celek .table__headerItem--selected {
   color: white;
 }
 
-.layout-1 #celek .table__contentText {
+ #celek .table__contentText {
   padding: 20px 46px 20px 49px;
   width: 100%;
 }
 
-.layout-1 #celek .table__item {
+ #celek .table__item {
   display: flex;
   align-items: center;
   max-height: 352px;
@@ -1005,35 +1006,35 @@ h3 {
   transition: all 1s ease;
 }
 
-.layout-1 #celek .table__content {
+ #celek .table__content {
   width: 70.9%;
   position: relative;
   box-shadow: 20px 3px 30px #00000029;
   overflow: hidden;
 }
 
-.layout-1 #celek .table__text {
+ #celek .table__text {
   font-size: 14px;
   line-height: 26px;
 }
 
-.layout-1 #celek .table__textHeader {
+ #celek .table__textHeader {
   font-size: 16px;
   margin-bottom: 18px;
 }
 
-.layout-1 #celek .table__image {
+ #celek .table__image {
   display: block;
   max-width: 352px;
   width: 100%;
   margin-left: auto;
 }
 
-.layout-1 #celek .table__imageContainer {
+ #celek .table__imageContainer {
   width: 100%;
 }
 
-.layout-1 #celek .table__headerItemRectangle {
+ #celek .table__headerItemRectangle {
   width: 75%;
   height: 62px;
   border-right: 1px solid #e5004b;
@@ -1046,7 +1047,7 @@ h3 {
   background: linear-gradient(282deg, #e5004b 0%, #730026 100%);
 }
 
-.layout-1 #celek .table__headerItemRectangle::after {
+ #celek .table__headerItemRectangle::after {
   content: "";
   width: 0;
   height: 0;
@@ -1116,7 +1117,7 @@ h3 {
 
 /*BLOCK 11*/
 
-.layout-1 #celek .block-11 .benefits-block {
+ #celek .block-11 .benefits-block {
   display: flex;
   justify-content: flex-start;
   gap: 0;
@@ -1124,11 +1125,11 @@ h3 {
   padding-bottom: 30px;
 }
 
-.layout-1 #celek .block-11 .benefits-block-image {
+ #celek .block-11 .benefits-block-image {
   width: 50%;
 }
 
-.layout-1 #celek .block-11 .benefits-image {
+ #celek .block-11 .benefits-image {
   width: 100%;
 }
 
@@ -1150,70 +1151,55 @@ h3 {
 
 /*SLIDER*/
 
-.layout-1 #celek .block-slider {
+ #celek .block-slider {
   padding-top: 43px;
   padding-bottom: 43px;
 }
 
-.layout-1 #celek .slider__arrowLeft {
+ #celek .slider__arrowLeft {
   transform: rotate(180deg);
 }
 
-.layout-1 #celek .slider {
+#celek .slider .slider__link {
+  position: relative;
+}
+
+ #celek .slider {
   display: flex;
   justify-content: space-between;
   overflow: hidden;
   scroll-behavior: smooth;
-  padding: 13px;
+  gap: 20px;
+  padding: 6px;
 }
 
-.layout-1 #celek .slider__container {
+ #celek .slider__container {
   margin-top: 20px;
   position: relative;
   padding: 0 35px;
 }
 
-.layout-1 #celek .slider__arrowContainer {
+ #celek .slider__arrowContainer {
   position: absolute;
-  z-index: 2;
+  z-index: 10;
   top: 110px;
 }
 
-.layout-1 #celek .slider__container::before,
-.layout-1 #celek .slider__container::after {
-  content: "";
-  width: 45px;
-  height: 265px;
-  display: block;
-  background-color: white;
-  z-index: 1;
-  position: absolute;
-  top: 0;
-}
-
-.layout-1 #celek .slider__container::before {
-  left: 0;
-}
-
-.layout-1 #celek .slider__container::after {
-  right: 15px;
-}
-
-.layout-1 #celek .slider__arrow:hover {
+ #celek .slider__arrow:hover {
   cursor: pointer;
   box-shadow: 0px 3px 20px #0000004d;
   transition: all 0.5s ease;
 }
 
-.layout-1 #celek .slider__arrowContainerLeft {
+ #celek .slider__arrowContainerLeft {
   left: -10px;
 }
 
-.layout-1 #celek .slider__arrowContainerRight {
+ #celek .slider__arrowContainerRight {
   right: -10px;
 }
 
-.layout-1 #celek .slider__arrow {
+ #celek .slider__arrow {
   width: 60px;
   height: 60px;
   display: flex;
@@ -1226,15 +1212,15 @@ h3 {
   z-index: 99;
 }
 
-.layout-1 #celek .slider__item {
+ #celek .slider__item {
   flex-shrink: 0;
   transition: all 0.5s ease;
-  padding: 0 13px;
+  padding: 0 13px 13px;
   position: relative;
   top: 50px;
 }
 
-.layout-1 #celek .sliderB__header {
+ #celek .sliderB__header {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1242,23 +1228,23 @@ h3 {
   margin-bottom: 20px;
 }
 
-.layout-1 #celek .sliderB__header .header-top-border {
+ #celek .sliderB__header .header-top-border {
   margin-bottom: 0;
 }
 
-.layout-1 #celek .sliderB__container {
+ #celek .sliderB__container {
   display: flex;
   align-items: center;
   gap: 51px;
 }
 
-.layout-1 #celek .block-sliderB .slider__arrowContainerLeft,
-.layout-1 #celek .block-sliderB .slider__arrowContainerRight {
+ #celek .block-sliderB .slider__arrowContainerLeft,
+ #celek .block-sliderB .slider__arrowContainerRight {
   left: unset;
   right: unset;
 }
 
-.layout-1 #celek .sliderB__item {
+ #celek .sliderB__item {
   display: flex;
   flex-direction: row-reverse;
   justify-content: space-between;
@@ -1269,7 +1255,7 @@ h3 {
   opacity: 0;
 }
 
-.layout-1 #celek .sliderB {
+ #celek .sliderB {
   position: relative;
   z-index: 5;
   min-height: 359px;
@@ -1278,19 +1264,19 @@ h3 {
   overflow:hidden;
 }
 
-.layout-1 #celek .sliderB__circles {
+ #celek .sliderB__circles {
   display: flex;
   justify-content: center;
   gap: 7px;
   margin-top: 27px;
 }
 
-.layout-1 #celek .sliderB__arrowContainer {
+ #celek .sliderB__arrowContainer {
   position: relative;
   top: -20px;
 }
 
-.layout-1 #celek .sliderB__circle {
+ #celek .sliderB__circle {
   width: 16px;
   height: 16px;
   background-color: #e9e9e9;
@@ -1298,18 +1284,18 @@ h3 {
   border-radius: 100%;
 }
 
-.layout-1 #celek .sliderB__circle--selected {
+ #celek .sliderB__circle--selected {
   background-color: #e5004b;
 }
 
-.layout-1 #celek .sliderB__wrapper {
+ #celek .sliderB__wrapper {
   position: relative;
   width: 100%;
   position: relative;
   z-index: 5;
 }
 
-.layout-1 #celek .sliderB__dummyOne {
+ #celek .sliderB__dummyOne {
   width: 100%;
   height: 78%;
   display: block;
@@ -1322,7 +1308,7 @@ h3 {
   background-color: white;
 }
 
-.layout-1 #celek .sliderB__dummyTwo {
+ #celek .sliderB__dummyTwo {
   width: 101.2%;
   height: 68%;
   display: block;
@@ -1335,64 +1321,64 @@ h3 {
   background-color: white;
 }
 
-.layout-1 #celek .block-sliderB .slider__container::before,
-.layout-1 #celek .block-sliderB .slider__container::after {
+ #celek .block-sliderB .slider__container::before,
+ #celek .block-sliderB .slider__container::after {
   display: none;
 }
 
-.layout-1 #celek .slider__item:hover {
+ #celek .slider__item:hover {
   cursor: pointer;
-  box-shadow: 0px 3px 20px #0000004d;
+  box-shadow: 0px 3px 10px #0000004d;
   transition: all 0.5s ease;
 }
 
-.layout-1 #celek .sliderB__contentText {
+ #celek .sliderB__contentText {
   padding-left: 45px;
   padding-right: 5%;
 
 }
 
-.layout-1 #celek .item__visible {
+ #celek .item__visible {
 opacity: 1;
 }
 
-.layout-1 #celek .sliderB__textHeader {
+ #celek .sliderB__textHeader {
   font-size: 16px;
   line-height: 24px;
   margin-bottom: 18px;
 }
 
-.layout-1 #celek .sliderB__text {
+ #celek .sliderB__text {
   font-size: 14px;
   line-height: 26px;
 }
 
-.layout-1 #celek .slider__image {
+ #celek .slider__image {
   max-width: 182px;
   display: block;
 }
 
-.layout-1 #celek .slider__description {
+ #celek .slider__description {
   font-size: 13px;
   line-height: 20px;
   margin-bottom: 11px;
 }
 
-.layout-1 #celek .slider__price {
+ #celek .slider__price {
   font-size: 18px;
   line-height: 21px;
   color: #e5004b;
   font-weight: 700;
 }
 
-.layout-1 #celek .slider__discountPrice {
+ #celek .slider__discountPrice {
   font-size: 12px;
   line-height: 13px;
   display: inline-block;
   position: relative;
 }
 
-.layout-1 #celek .slider__discountPrice::after {
+ #celek .slider__discountPrice::after {
   content: "";
   width: 92%;
   height: 2px;
@@ -1403,7 +1389,7 @@ opacity: 1;
   top: 5px;
 }
 
-.layout-1 #celek .slider__headerTop {
+ #celek .slider__headerTop {
   width: 13px;
   height: 3px;
   display: block;
@@ -1411,7 +1397,7 @@ opacity: 1;
   margin-bottom: 6px;
 }
 
-.layout-1 #celek .slider__imageContainer {
+ #celek .slider__imageContainer {
   width: 100%;
   min-height: 250px;
   display: flex;
@@ -1420,7 +1406,7 @@ opacity: 1;
   position: relative;
 }
 
-.layout-1 #celek .slider__discount {
+ #celek .slider__discount {
   width: 47px;
   height: 47px;
   background: linear-gradient(180deg, #e5004b 0%, #730026 100%);
@@ -1437,18 +1423,19 @@ opacity: 1;
   font-size: 14px;
 }
 
-.layout-1 #celek .slider__header--fix {
+ #celek .slider__header--fix {
   min-height: 36px;
 }
 
-.layout-1 #celek .slider__imageContainer::before {
+ #celek .slider__imageContainer::before {
   content: "";
   width: 2px;
   height: 265px;
   display: block;
   position: absolute;
   top: 0;
-  left: -20px;
+  z-index: 2;
+  right: -22px;
   background: linear-gradient(180deg, #ffffff 0%, #cccccc 49%, #ffffff 100%);
 }
 
@@ -1524,7 +1511,7 @@ opacity: 1;
 
 /*QUOTE*/
 
-.layout-1 #celek .quoting {
+ #celek .quoting {
   position: relative;
   background: rgb(229, 0, 75);
   background: linear-gradient(90deg, rgba(229, 0, 75, 1) 0%, rgba(115, 0, 38, 1) 100%);
@@ -1533,7 +1520,7 @@ opacity: 1;
   width: 90%;
 }
 
-.layout-1 #celek .quote {
+ #celek .quote {
   color: white;
   font-size: 30px;
   line-height: 42px;
@@ -1550,14 +1537,14 @@ opacity: 1;
   line-height: 38px;
 }
 
-.layout-1 #celek .quoting-symbol {
+ #celek .quoting-symbol {
   position: absolute;
   left: 36px;
   top: 28px;
   opacity: 0;
 }
 
-.layout-1 #celek .banner-image {
+ #celek .banner-image {
   width: 100%;
 }
 
@@ -1589,15 +1576,15 @@ opacity: 1;
 
 /*ANIMATION*/
 
-.layout-1 #celek .image-wrapper-right {
+ #celek .image-wrapper-right {
   transform: translatex(100px);
 }
 
-.layout-1 #celek .image-wrapper-left {
+ #celek .image-wrapper-left {
   transform: translatex(-100px);
 }
 
-.layout-1 #celek .header-top-border-inView {
+ #celek .header-top-border-inView {
   animation-duration: 1s;
   animation-delay: 0.5s;
   animation-fill-mode: forwards;
@@ -1616,7 +1603,7 @@ opacity: 1;
   }
 }
 
-.layout-1 #celek .image-wrapper-right-inView {
+ #celek .image-wrapper-right-inView {
   animation-duration: 1s;
   animation-delay: 0.5s;
   animation-fill-mode: forwards;
@@ -1635,7 +1622,7 @@ opacity: 1;
   }
 }
 
-.layout-1 #celek .image-wrapper-left-inView {
+ #celek .image-wrapper-left-inView {
   animation-duration: 1s;
   animation-delay: 0.5s;
   animation-fill-mode: forwards;
@@ -1654,7 +1641,7 @@ opacity: 1;
   }
 }
 
-.layout-1 #celek .item--visible {
+ #celek .item--visible {
   animation-duration: 1s;
   animation-delay: 0.3s;
   animation-fill-mode: forwards;
@@ -1673,7 +1660,7 @@ opacity: 1;
   }
 }
 
-.layout-1 #celek .item--visibleRight {
+ #celek .item--visibleRight {
   animation-duration: 1s;
   animation-fill-mode: forwards;
   animation-name: elementPopRight;
@@ -1691,7 +1678,7 @@ opacity: 1;
   }
 }
 
-.layout-1 #celek .item--visibleRightReverse {
+ #celek .item--visibleRightReverse {
   animation-duration: 1s;
   animation-fill-mode: forwards;
   animation-name: elementPopRightReverse;
@@ -1711,7 +1698,7 @@ opacity: 1;
   }
 }
 
-.layout-1 #celek .item--visibleLeft {
+ #celek .item--visibleLeft {
   animation-duration: 1s;
   animation-fill-mode: forwards;
   animation-name: elementPopLeft;
@@ -1729,7 +1716,7 @@ opacity: 1;
   }
 }
 
-.layout-1 #celek .item--visibleLeftReverse {
+ #celek .item--visibleLeftReverse {
   animation-duration: 1s;
   animation-fill-mode: forwards;
   animation-name: elementPopLeftReverse;
@@ -1749,7 +1736,7 @@ opacity: 1;
   }
 }
 
-.layout-1 #celek .table__headerItemRectangle--visible {
+ #celek .table__headerItemRectangle--visible {
   display: block;
   animation-duration: 1s;
   animation-fill-mode: forwards;
@@ -1768,7 +1755,7 @@ opacity: 1;
   }
 }
 
-.layout-1 #celek .benefit-component-inView {
+ #celek .benefit-component-inView {
   animation-duration: 1s;
   animation-delay: 0.5s;
   animation-fill-mode: forwards;
@@ -1787,7 +1774,7 @@ opacity: 1;
   }
 }
 
-.layout-1 #celek .gray-divider-in-image-inView {
+ #celek .gray-divider-in-image-inView {
   animation-duration: 1s;
   animation-delay: 0.5s;
   animation-fill-mode: forwards;
@@ -1806,7 +1793,7 @@ opacity: 1;
   }
 }
 
-.layout-1 #celek .block-2-circle-inView {
+ #celek .block-2-circle-inView {
   animation-duration: 3s;
   animation-fill-mode: forwards;
   animation-name: circleOpacity;
