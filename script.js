@@ -37,10 +37,13 @@ let sliderPadding = Number(style.padding.replace("px", ""));
 //-->functions
 
 sliderItemsTypeA.forEach((item) => {
-  if (screenWidth >= 1250) item.style.width = (sliderWidth - sliderGap * 3 - sliderPadding * 2) / 4 + "px"; //4 items visible
-  else if (screenWidth > 767) item.style.width = (sliderWidth - sliderGap * 2 - sliderPadding * 2) / 3 + "px"; // 3 items
-  else if (screenWidth > 525) item.style.width = (sliderWidth - sliderGap * 1 - sliderPadding * 2) / 2 + "px"; // 2 items
-  else item.style.width = (sliderWidth - sliderPadding * 2) + "px"; // 1 item
+  if (screenWidth >= 1250)
+    item.style.width = (sliderWidth - sliderGap * 3 - sliderPadding * 2) / 4 + "px"; //4 items visible
+  else if (screenWidth > 767)
+    item.style.width = (sliderWidth - sliderGap * 2 - sliderPadding * 2) / 3 + "px"; // 3 items
+  else if (screenWidth > 525)
+    item.style.width = (sliderWidth - sliderGap * 1 - sliderPadding * 2) / 2 + "px"; // 2 items
+  else item.style.width = sliderWidth - sliderPadding * 2 + "px"; // 1 item
 });
 
 /*-----------------------------------------------------------------------------------*/
@@ -65,11 +68,11 @@ sliders.forEach((item, i) => {
   let containerWidth = item.children[0].offsetWidth;
 
   nxtBtn[i].addEventListener("click", () => {
-    item.scrollLeft += containerWidth +sliderGap;
+    item.scrollLeft += containerWidth + sliderGap;
   });
 
   preBtn[i].addEventListener("click", () => {
-    item.scrollLeft -= containerWidth +sliderGap;
+    item.scrollLeft -= containerWidth + sliderGap;
   });
 });
 
@@ -105,10 +108,14 @@ tableHeader.forEach((item) => {
   });
 });
 
-const tableItemVisible = document.querySelector("#celek .block-10 .table__header");
+const tableItemVisible = document.querySelector("#celek .block-10 .table__content .item--visible");
 
-window.addEventListener("DOMContentLoaded", (event) => {
-  tableItemVisible.parentElement.style.height = tableItemVisible.offsetHeight + "px";
+window.addEventListener("load", (event) => {
+  if (screenWidth > 425)
+    tableItemVisible.parentElement.style.height = document.querySelector("#celek .table__header").offsetHeight + "px";
+  else {
+    tableItemVisible.parentElement.style.height = tableItemVisible.getBoundingClientRect().height + "px";
+  }
 });
 
 /*-----------------------------------------------------------------------------------*/
@@ -125,7 +132,7 @@ const sliderCircles = document.querySelectorAll("#celek .sliderB__circle");
 
 const sliderItemVisible = document.querySelector("#celek .block-sliderB .item--visible");
 
-window.addEventListener("DOMContentLoaded", (event) => {
+window.addEventListener("load", (event) => {
   sliderItemVisible.parentElement.style.height = sliderItemVisible.offsetHeight + "px";
 });
 
@@ -299,3 +306,43 @@ let observer = new IntersectionObserver((entries) => {
 elementsToAnimate.forEach((item) => {
   observer.observe(item);
 });
+
+/*-----------------------------------------------------------------------------------*/
+/*	 6. YOUTUBE VIDEO CONTROL
+/*-----------------------------------------------------------------------------------*/
+
+const videoThumbnails = document.querySelectorAll('.video__thumbnail')
+const videoPosterContainer = document.querySelector('.video__posterContainer')
+
+videoPosterContainer.style.width = document.querySelector('.video-wrapper').offsetWidth + 'px'
+videoPosterContainer.style.height = document.querySelector('.video-wrapper').offsetHeight + 'px'
+
+var tag = document.createElement('script');
+tag.id = 'iframe-demo';
+tag.src = 'https://www.youtube.com/iframe_api';
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+var player;
+function onYouTubeIframeAPIReady() {
+  player = new YT.Player('video4YWiybTQ', {
+      events: {
+        'onReady': onPlayerReady
+      }
+  });
+}
+function onPlayerReady() {
+
+  videoPosterContainer.addEventListener('click', ()=> {
+    videoPosterContainer.style.display = 'none';
+    player.playVideo()
+  })
+
+  videoThumbnails.forEach(item => {
+    item.addEventListener('click', ()=> {
+      videoPosterContainer.style.display = 'none';
+      player.seekTo(Number(item.dataset.play))
+    })
+  })
+
+}
