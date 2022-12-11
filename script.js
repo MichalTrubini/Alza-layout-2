@@ -314,8 +314,10 @@ elementsToAnimate.forEach((item) => {
 const videoThumbnails = document.querySelectorAll('.video__thumbnail')
 const videoPosterContainer = document.querySelector('.video__posterContainer')
 
-videoPosterContainer.style.width = document.querySelector('.video-wrapper').offsetWidth + 'px'
-videoPosterContainer.style.height = document.querySelector('.video-wrapper').offsetHeight + 'px'
+window.addEventListener("load", (event) => {
+  videoPosterContainer.style.width = document.querySelector('.video-wrapper').offsetWidth + 'px'
+  videoPosterContainer.style.height = document.querySelector('.video-wrapper').offsetHeight + 'px'
+});
 
 var tag = document.createElement('script');
 tag.id = 'iframe-demo';
@@ -342,6 +344,7 @@ function onPlayerReady() {
     item.addEventListener('click', ()=> {
       videoPosterContainer.style.display = 'none';
       player.seekTo(Number(item.dataset.play))
+      player.playVideo()
     })
   })
 
