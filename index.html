@@ -352,10 +352,15 @@
 
         <!-- block 7 start -->
         <div class="block-7 container" data-act="block">
-          <h3 class="custom-header-with-top-border custom-header-with-top-border--center" data-act="edit">Video - rozbalení Espressa a jeho zprovoznění</h3>
+          <div class="block-7-header">
+            <div class="header-top-border--short" data-animate="animation"></div>
+            <h3 class="custom-header-with-top-border custom-header-with-top-border--center" data-act="edit">Video - rozbalení Espressa a jeho zprovoznění</h3>
+            <div class="header-top-border--short header-top-border__sliderB" data-animate="animation"></div>
+          </div>
           <div class="video__container">
             <div class="video-wrapper">
               <div class="video__posterContainer"></div>
+              <!-- video src must have "?enablejsapi=1" affixed for the thumbnail navigation to work! -->
               <iframe
                 id="video4YWiybTQ"
                 class="video-iframe"
@@ -370,7 +375,24 @@
                 <img src="img/arrow.svg" alt="arrow" class="video__arrowUp" />
                 <div class="video__thumbnailsDivider"></div>
               </div>
-              <div class="video__thumbnails">
+              <div class="video__thumbnails" data-act="block">
+                <!-- To add new thumbnail, simply add new div block "video__thumbnailItem". To jump to correct time, fill the data-play attribute with correct value in seconds -->
+                <div class="video__thumbnailItem">
+                  <img src="img/thumbnail1.png" alt="thumbnail" class="video__thumbnail" data-play="0"/>
+                  <p class="video__thumbnailCaption">Úvod</p>
+                </div>
+                <div class="video__thumbnailItem">
+                  <img src="img/thumbnail2.png" alt="thumbnail" class="video__thumbnail" data-play="52"/>
+                  <p class="video__thumbnailCaption">Obsah balení</p>
+                </div>
+                <div class="video__thumbnailItem">
+                  <img src="img/thumbnail3.png" alt="thumbnail" class="video__thumbnail" data-play="87"/>
+                  <p class="video__thumbnailCaption">Předspařovací jednotka</p>
+                </div>
+                <div class="video__thumbnailItem">
+                  <img src="img/thumbnail4.png" alt="thumbnail" class="video__thumbnail" data-play="128"/>
+                  <p class="video__thumbnailCaption">Stavitelná tryska</p>
+                </div>
                 <div class="video__thumbnailItem">
                   <img src="img/thumbnail1.png" alt="thumbnail" class="video__thumbnail" data-play="0"/>
                   <p class="video__thumbnailCaption">Úvod</p>
@@ -592,9 +614,9 @@
         <!-- block slider PROGRAMY start -->
         <div class="block-slider block-sliderB container" data-act="block">
           <div class="sliderB__header">
-            <div class="header-top-border" data-animate="animation"></div>
+            <div class="header-top-border--short" data-animate="animation"></div>
             <h3 class="custom-header-with-top-border" data-act="edit">Programy</h3>
-            <div class="header-top-border header-top-border__sliderB" data-animate="animation"></div>
+            <div class="header-top-border--short header-top-border__sliderB" data-animate="animation"></div>
           </div>
           <div class="sliderB__container">
             <div class="sliderB__arrowContainer sliderB__arrowContainerLeft">

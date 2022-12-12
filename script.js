@@ -6,6 +6,7 @@
 //3.TABLE
 //4.SLIDER TYPEB
 //5.ANIMATIONS WHEN SCROLLED TO VIEW
+//6.YOUTUBE VIDEO
 //
 //***
 
@@ -204,6 +205,7 @@ let observer = new IntersectionObserver((entries) => {
   //separates elements that require the same animation into categories based on their class
 
   const headerTopBar = entries.filter((entry) => entry.target.classList.contains("header-top-border"));
+  const headerTopBarShort = entries.filter((entry) => entry.target.classList.contains("header-top-border--short"));
   const imageAnimateLeft = entries.filter((entry) => entry.target.classList.contains("image-wrapper-right"));
   const imageAnimateRight = entries.filter((entry) => entry.target.classList.contains("image-wrapper-left"));
   const benefitComponent = entries.filter((entry) => entry.target.classList.contains("benefit-component"));
@@ -226,6 +228,12 @@ let observer = new IntersectionObserver((entries) => {
     if (item.isIntersecting) {
       item.target.classList.add("slider__item-inView");
       item.target.style.animationDelay = 0.5 * i + "s";
+    }
+  });
+
+  headerTopBarShort.forEach((item) => {
+    if (item.isIntersecting) {
+      item.target.classList.add("header-top-border--short-inView");
     }
   });
 
@@ -308,44 +316,70 @@ elementsToAnimate.forEach((item) => {
 });
 
 /*-----------------------------------------------------------------------------------*/
-/*	 6. YOUTUBE VIDEO CONTROL
+/*	 6. YOUTUBE VIDEO
 /*-----------------------------------------------------------------------------------*/
 
-const videoThumbnails = document.querySelectorAll('.video__thumbnail')
-const videoPosterContainer = document.querySelector('.video__posterContainer')
+//video thumbnails jump to section
 
-window.addEventListener("load", (event) => {
-  videoPosterContainer.style.width = document.querySelector('.video-wrapper').offsetWidth + 'px'
-  videoPosterContainer.style.height = document.querySelector('.video-wrapper').offsetHeight + 'px'
-});
+const videoThumbnails = document.querySelectorAll("#celek .video__thumbnail");
 
-var tag = document.createElement('script');
-tag.id = 'iframe-demo';
-tag.src = 'https://www.youtube.com/iframe_api';
-var firstScriptTag = document.getElementsByTagName('script')[0];
+let tag = document.createElement("script");
+tag.id = "iframe-demo";
+tag.src = "https://www.youtube.com/iframe_api";
+let firstScriptTag = document.getElementsByTagName("script")[0];
 firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
-var player;
+let player;
 function onYouTubeIframeAPIReady() {
-  player = new YT.Player('video4YWiybTQ', {
-      events: {
-        'onReady': onPlayerReady
-      }
+  player = new YT.Player("video4YWiybTQ", {
+    events: {
+      onReady: onPlayerReady,
+    },
   });
 }
 function onPlayerReady() {
+  videoPosterContainer.addEventListener("click", () => {
+    videoPosterContainer.style.display = "none";
+    player.playVideo();
+  });
 
-  videoPosterContainer.addEventListener('click', ()=> {
-    videoPosterContainer.style.display = 'none';
-    player.playVideo()
-  })
-
-  videoThumbnails.forEach(item => {
-    item.addEventListener('click', ()=> {
-      videoPosterContainer.style.display = 'none';
-      player.seekTo(Number(item.dataset.play))
-      player.playVideo()
-    })
-  })
-
+  videoThumbnails.forEach((item) => {
+    item.addEventListener("click", () => {
+      videoPosterContainer.style.display = "none";
+      player.seekTo(Number(item.dataset.play));
+      player.playVideo();
+    });
+  });
 }
+
+//video slider height setting
+
+const sencorVideoSlider = document.querySelector("#celek .video__thumbnails");
+let sencorVideoSliderStyle = getComputedStyle(sencorVideoSlider);
+let sencorVideoSliderGap = Number(sencorVideoSliderStyle.gap.replace("px", ""));
+window.addEventListener("load", (event) => {
+  const sencorVideoSliderHeight = videoThumbnails[0].offsetHeight * 4 + sencorVideoSliderGap * 3;
+  sencorVideoSlider.style.height = sencorVideoSliderHeight + "px";
+});
+
+//video slider scrolling
+
+const videoArrowUp = document.querySelector("#celek .video__arrowUp");
+const videoArrowDown = document.querySelector("#celek .video__arrowDown");
+
+videoArrowDown.addEventListener("click", () => {
+  sencorVideoSlider.scrollTop += videoThumbnails[0].offsetHeight + sencorVideoSliderGap;
+});
+
+videoArrowUp.addEventListener("click", () => {
+  sencorVideoSlider.scrollTop -= videoThumbnails[0].offsetHeight + sencorVideoSliderGap;
+});
+
+//video poster size
+
+const videoPosterContainer = document.querySelector("#celek .video__posterContainer");
+
+window.addEventListener("load", (event) => {
+  videoPosterContainer.style.width = document.querySelector("#celek .video-wrapper").offsetWidth + "px";
+  videoPosterContainer.style.height = document.querySelector("#celek .video-wrapper").offsetHeight + "px";
+});
