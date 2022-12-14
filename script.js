@@ -321,7 +321,7 @@ elementsToAnimate.forEach((item) => {
 
 //video thumbnails jump to section
 
-const videoThumbnails = document.querySelectorAll("#celek .video__thumbnail");
+const videoThumbnails = document.querySelectorAll("#celek .video__thumbnailItem");
 
 let tag = document.createElement("script");
 tag.id = "iframe-demo";

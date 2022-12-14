@@ -940,7 +940,7 @@ h3 {
 }
 
 #celek .video__posterContainer:hover,
-#celek .video__thumbnail:hover,
+#celek .video__thumbnailItem:hover,
 #celek .video__arrowUp:hover,
 #celek .video__arrowDown:hover {
   cursor: pointer;
@@ -1728,14 +1728,78 @@ h3 {
   opacity: 0;
 }
 
+#celek .big-banner {
+  position: relative;
+}
+
+#celek .big-banner__text {
+  position: absolute;
+  background-color: #E5004B;
+  font-weight: 700;
+  color: white;
+  font-style: italic;
+  font-size: 18px;
+  padding: 18px;
+}
+
+#celek .big-banner__container {
+  position: relative;
+  z-index: 9;
+}
+
+#celek .big-banner__container::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 150px;
+  position: absolute;
+  z-index: 99;
+  bottom: 0;
+  background:linear-gradient(0deg, rgba(255, 255, 255, 1) 16%, rgba(255, 255, 255, 0) 100%)
+}
+
+#celek .big-banner__textTop {
+  top: 50px;
+  z-index: 99;
+}
+
+#celek .big-banner__textBottom {
+  top: 84px;
+  z-index: 98;
+}
+
+#celek .big-banner3__text {
+  margin: 27px 0 62px;
+  line-height: 26px;
+  font-size: 16px;
+}
+
 #celek .banner-image {
   width: 100%;
+  display: block;
+}
+
+@media screen and (max-width:975px) {
+  .layout-0 #celek .big-banner3__text {
+    margin: 27px 0;
+    line-height: 26px;
+    font-size: 14px;
+  }
+
+  #celek .big-banner__text {
+    font-size: 14px;
+  }
 }
 
 @media screen and (max-width: 425px) {
   .mobile #celek .banner-image {
     display: none;
   }
+
+  .mobile #celek .big-banner {
+    display: none;
+  }
+
   .mobile #celek .quote {
     color: white;
     font-size: 24px;
