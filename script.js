@@ -88,10 +88,10 @@ tableItems.forEach((item, i) => {
   tableHeader[i].addEventListener("click", () => {
     tableItems.forEach((tableItem) => {
       if (tableItem.classList.contains("item--visible")) tableItem.classList.remove("item--visible");
-      item.parentElement.style.height = item.offsetHeight + "px";
     });
 
     item.classList.add("item--visible");
+    if (screenWidth < 426) item.parentElement.style.height = (item.firstElementChild.offsetHeight + item.lastElementChild.offsetHeight) + "px";
   });
 });
 
@@ -115,7 +115,7 @@ window.addEventListener("load", (event) => {
   if (screenWidth > 425)
     tableItemVisible.parentElement.style.height = document.querySelector("#celek .table__header").offsetHeight + "px";
   else {
-    tableItemVisible.parentElement.style.height = tableItemVisible.getBoundingClientRect().height + "px";
+    tableItemVisible.parentElement.style.height = (tableItemVisible.firstElementChild.offsetHeight + tableItemVisible.lastElementChild.offsetHeight) + "px";
   }
 });
 
@@ -129,17 +129,24 @@ const sliderB = document.querySelectorAll("#celek .sliderB");
 const nxtBtnB = document.querySelector("#celek .sliderB__arrowContainerRight");
 const preBtnB = document.querySelector("#celek .sliderB__arrowContainerLeft");
 const sliderBItems = document.querySelectorAll("#celek .sliderB__item");
-const sliderCircles = document.querySelectorAll("#celek .sliderB__circle");
+
+const sliderCirclesContainer = document.querySelector("#celek .sliderB__circles");
 
 const sliderItemVisible = document.querySelector("#celek .block-sliderB .item--visible");
 
+if (screenWidth < 426) {
 window.addEventListener("load", (event) => {
   sliderItemVisible.parentElement.style.height = sliderItemVisible.offsetHeight + "px";
-});
+}); 
+}
 
 let clickCounter = 0;
 
-//-->functions
+sliderBItems.forEach(item => {
+  if (item.children.length === 1) item.classList.add('sliderB__item-paddingFix')
+})
+
+//-->actions when clicked on arrows
 
 nxtBtnB.addEventListener("click", () => {
   sliderBItems.forEach((item, i) => {
@@ -155,10 +162,29 @@ nxtBtnB.addEventListener("click", () => {
         item.nextElementSibling.classList.add("item--visible");
         item.nextElementSibling.firstElementChild.classList.add("item--visibleRight");
         item.nextElementSibling.lastElementChild.classList.add("item--visibleLeft");
-        item.parentElement.style.height = item.offsetHeight + "px";
+        if (screenWidth < 426) item.parentElement.style.height = item.offsetHeight + "px";
       }, 750);
     }
+    if((i === clickCounter) & (i === sliderBItems.length - 1)) {
+      let jumpToSlide = document.querySelector('#celek .sliderB__item:nth-child(1)');
+      clickCounter = -1;
+      item.firstElementChild.classList.add("item--visibleRightReverse");
+      item.lastElementChild.classList.add("item--visibleLeftReverse");
+      setTimeout(() => {
+        item.classList.remove("item--visible");
+        item.firstElementChild.classList.remove("item--visibleRightReverse");
+        item.lastElementChild.classList.remove("item--visibleLeftReverse");
+        item.firstElementChild.classList.remove("item--visibleRight");
+        item.lastElementChild.classList.remove("item--visibleLeft");
+        jumpToSlide.classList.add("item--visible");
+        jumpToSlide.firstElementChild.classList.add("item--visibleRight");
+        jumpToSlide.lastElementChild.classList.add("item--visibleLeft");
+
+      }, 750);
+    }
+
   });
+  let sliderCircles = document.querySelectorAll("#celek .sliderB__circle");
   if (clickCounter < sliderBItems.length - 1) clickCounter += 1;
   sliderCircles.forEach((item, i) => {
     if (i === clickCounter) item.classList.add("sliderB__circle--selected");
@@ -180,15 +206,75 @@ preBtnB.addEventListener("click", () => {
         item.previousElementSibling.classList.add("item--visible");
         item.previousElementSibling.firstElementChild.classList.add("item--visibleRight");
         item.previousElementSibling.lastElementChild.classList.add("item--visibleLeft");
-        item.parentElement.style.height = item.offsetHeight + "px";
+      }, 750);
+    }
+    if((i === clickCounter) & (i === 0)) {
+      let jumpToSlide = document.querySelector('#celek .sliderB__item:last-child');
+      clickCounter = sliderBItems.length ;
+      item.firstElementChild.classList.add("item--visibleRightReverse");
+      item.lastElementChild.classList.add("item--visibleLeftReverse");
+      setTimeout(() => {
+        item.classList.remove("item--visible");
+        item.firstElementChild.classList.remove("item--visibleRightReverse");
+        item.lastElementChild.classList.remove("item--visibleLeftReverse");
+        item.firstElementChild.classList.remove("item--visibleRight");
+        item.lastElementChild.classList.remove("item--visibleLeft");
+        jumpToSlide.classList.add("item--visible");
+        jumpToSlide.firstElementChild.classList.add("item--visibleRight");
+        jumpToSlide.lastElementChild.classList.add("item--visibleLeft");
       }, 750);
     }
   });
+  let sliderCircles = document.querySelectorAll("#celek .sliderB__circle");
+
   if (clickCounter > 0) clickCounter -= 1;
   sliderCircles.forEach((item, i) => {
     if (i === clickCounter) item.classList.add("sliderB__circle--selected");
     else item.classList.remove("sliderB__circle--selected");
   });
+});
+
+//-->create circles
+//create n number of circles based on number of slides in the slider
+//choosing javascript to add these elements because number of slides could be dynamic
+//adding click control to the elements
+
+for (let i = 0; i < sliderBItems.length; i++) {
+  let circleDiv = document.createElement("div");
+  circleDiv.classList.add("sliderB__circle");
+  circleDiv.dataset.circleSencor = i;
+
+  circleDiv.addEventListener("click", () => {
+    clickCounter = Number(circleDiv.dataset.circleSencor);
+
+    let sliderCircles = document.querySelectorAll("#celek .sliderB__circle");
+
+    sliderCircles.forEach((item, i) => {
+      if (i === clickCounter) item.classList.add("sliderB__circle--selected");
+      else item.classList.remove("sliderB__circle--selected");
+    });
+
+    let jumpToSlide = document.querySelector(`#celek .sliderB__item:nth-child(${clickCounter + 1})`);
+    let currentVisibleSlide = document.querySelector("#celek .sliderB__item.item--visible");
+
+    currentVisibleSlide.firstElementChild.classList.add("item--visibleRightReverse");
+    currentVisibleSlide.lastElementChild.classList.add("item--visibleLeftReverse");
+    setTimeout(() => {
+      currentVisibleSlide.classList.remove("item--visible");
+      currentVisibleSlide.firstElementChild.classList.remove("item--visibleRightReverse");
+      currentVisibleSlide.lastElementChild.classList.remove("item--visibleLeftReverse");
+      currentVisibleSlide.firstElementChild.classList.remove("item--visibleRight");
+      currentVisibleSlide.lastElementChild.classList.remove("item--visibleLeft");
+      jumpToSlide.classList.add("item--visible");
+      jumpToSlide.firstElementChild.classList.add("item--visibleRight");
+      jumpToSlide.lastElementChild.classList.add("item--visibleLeft");
+    }, 750);
+  });
+  sliderCirclesContainer.append(circleDiv);
+}
+
+window.addEventListener("load", (event) => {
+  sliderCirclesContainer.firstElementChild.classList.add("sliderB__circle--selected");
 });
 
 /*-----------------------------------------------------------------------------------*/
@@ -205,6 +291,7 @@ let observer = new IntersectionObserver((entries) => {
   //separates elements that require the same animation into categories based on their class
 
   const headerTopBar = entries.filter((entry) => entry.target.classList.contains("header-top-border"));
+  const bannerText = entries.filter((entry) => entry.target.classList.contains("big-banner__text"));
   const headerTopBarShort = entries.filter((entry) => entry.target.classList.contains("header-top-border--short"));
   const imageAnimateLeft = entries.filter((entry) => entry.target.classList.contains("image-wrapper-right"));
   const imageAnimateRight = entries.filter((entry) => entry.target.classList.contains("image-wrapper-left"));
@@ -234,6 +321,12 @@ let observer = new IntersectionObserver((entries) => {
   headerTopBarShort.forEach((item) => {
     if (item.isIntersecting) {
       item.target.classList.add("header-top-border--short-inView");
+    }
+  });
+
+  bannerText.forEach((item) => {
+    if (item.isIntersecting) {
+      item.target.classList.add("big-banner__textContainer-inView");
     }
   });
 
@@ -357,10 +450,13 @@ function onPlayerReady() {
 const sencorVideoSlider = document.querySelector("#celek .video__thumbnails");
 let sencorVideoSliderStyle = getComputedStyle(sencorVideoSlider);
 let sencorVideoSliderGap = Number(sencorVideoSliderStyle.gap.replace("px", ""));
+
+if(screenWidth > 425) {
 window.addEventListener("load", (event) => {
   const sencorVideoSliderHeight = videoThumbnails[0].offsetHeight * 4 + sencorVideoSliderGap * 3;
   sencorVideoSlider.style.height = sencorVideoSliderHeight + "px";
 });
+} else sencorVideoSlider.style.height = 344 + 'px'
 
 //video slider scrolling
 
