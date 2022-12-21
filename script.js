@@ -91,8 +91,14 @@ tableItems.forEach((item, i) => {
     });
 
     item.classList.add("item--visible");
-    if (screenWidth < 426) item.parentElement.style.height = (item.firstElementChild.offsetHeight + item.lastElementChild.offsetHeight) + "px";
+    if (screenWidth < 426) item.parentElement.style.height = item.offsetHeight + "px";
   });
+  if (
+    item.children.length === 1 ||
+    item.lastElementChild.style.display === "none" ||
+    item.lastElementChild.firstElementChild.style.display === "none"
+  )
+    item.classList.add("table__item--singleChild");
 });
 
 tableHeader.forEach((item) => {
@@ -115,7 +121,7 @@ window.addEventListener("load", (event) => {
   if (screenWidth > 425)
     tableItemVisible.parentElement.style.height = document.querySelector("#celek .table__header").offsetHeight + "px";
   else {
-    tableItemVisible.parentElement.style.height = (tableItemVisible.firstElementChild.offsetHeight + tableItemVisible.lastElementChild.offsetHeight) + "px";
+    tableItemVisible.parentElement.style.height = tableItemVisible.offsetHeight + "px";
   }
 });
 
@@ -135,24 +141,28 @@ const sliderCirclesContainer = document.querySelector("#celek .sliderB__circles"
 const sliderItemVisible = document.querySelector("#celek .block-sliderB .item--visible");
 
 if (screenWidth < 426) {
-window.addEventListener("load", (event) => {
-  sliderItemVisible.parentElement.style.height = sliderItemVisible.offsetHeight + "px";
-}); 
+  window.addEventListener("load", (event) => {
+    sliderItemVisible.parentElement.style.height = sliderItemVisible.offsetHeight + "px";
+  });
 }
 
 let clickCounter = 0;
 
-sliderBItems.forEach(item => {
-  if (item.children.length === 1) item.classList.add('sliderB__item-paddingFix')
-})
+sliderBItems.forEach((item) => {
+  if (item.children.length === 1) item.classList.add("sliderB__item-paddingFix");
+});
+
+if (screenWidth < 426) sliderBItems[0].parentElement.style.minHeight = sliderBItems[0].offsetHeight + "px";
 
 //-->actions when clicked on arrows
+//All this does is adding and removing classes + setting the height
 
 nxtBtnB.addEventListener("click", () => {
   sliderBItems.forEach((item, i) => {
     if ((i === clickCounter) & (i < sliderBItems.length - 1)) {
       item.firstElementChild.classList.add("item--visibleRightReverse");
       item.lastElementChild.classList.add("item--visibleLeftReverse");
+      //setTimeout used here because we are waiting for the css animation to finish
       setTimeout(() => {
         item.classList.remove("item--visible");
         item.firstElementChild.classList.remove("item--visibleRightReverse");
@@ -162,11 +172,14 @@ nxtBtnB.addEventListener("click", () => {
         item.nextElementSibling.classList.add("item--visible");
         item.nextElementSibling.firstElementChild.classList.add("item--visibleRight");
         item.nextElementSibling.lastElementChild.classList.add("item--visibleLeft");
-        if (screenWidth < 426) item.parentElement.style.height = item.offsetHeight + "px";
+        if (screenWidth < 426) {
+          item.parentElement.style.height = item.nextElementSibling.offsetHeight + "px";
+          item.parentElement.style.minHeight = item.nextElementSibling.offsetHeight + "px";
+        }
       }, 750);
     }
-    if((i === clickCounter) & (i === sliderBItems.length - 1)) {
-      let jumpToSlide = document.querySelector('#celek .sliderB__item:nth-child(1)');
+    if ((i === clickCounter) & (i === sliderBItems.length - 1)) {
+      let jumpToSlide = document.querySelector("#celek .sliderB__item:nth-child(1)");
       clickCounter = -1;
       item.firstElementChild.classList.add("item--visibleRightReverse");
       item.lastElementChild.classList.add("item--visibleLeftReverse");
@@ -179,10 +192,12 @@ nxtBtnB.addEventListener("click", () => {
         jumpToSlide.classList.add("item--visible");
         jumpToSlide.firstElementChild.classList.add("item--visibleRight");
         jumpToSlide.lastElementChild.classList.add("item--visibleLeft");
-
+        if (screenWidth < 426) {
+          jumpToSlide.parentElement.style.height = jumpToSlide.offsetHeight + "px";
+          jumpToSlide.parentElement.style.minHeight = jumpToSlide.offsetHeight + "px";
+        }
       }, 750);
     }
-
   });
   let sliderCircles = document.querySelectorAll("#celek .sliderB__circle");
   if (clickCounter < sliderBItems.length - 1) clickCounter += 1;
@@ -206,11 +221,15 @@ preBtnB.addEventListener("click", () => {
         item.previousElementSibling.classList.add("item--visible");
         item.previousElementSibling.firstElementChild.classList.add("item--visibleRight");
         item.previousElementSibling.lastElementChild.classList.add("item--visibleLeft");
+        if (screenWidth < 426) {
+          item.parentElement.style.height = item.previousElementSibling.offsetHeight + "px";
+          item.parentElement.style.minHeight = item.previousElementSibling.offsetHeight + "px";
+        }
       }, 750);
     }
-    if((i === clickCounter) & (i === 0)) {
-      let jumpToSlide = document.querySelector('#celek .sliderB__item:last-child');
-      clickCounter = sliderBItems.length ;
+    if ((i === clickCounter) & (i === 0)) {
+      let jumpToSlide = document.querySelector("#celek .sliderB__item:last-child");
+      clickCounter = sliderBItems.length;
       item.firstElementChild.classList.add("item--visibleRightReverse");
       item.lastElementChild.classList.add("item--visibleLeftReverse");
       setTimeout(() => {
@@ -222,6 +241,10 @@ preBtnB.addEventListener("click", () => {
         jumpToSlide.classList.add("item--visible");
         jumpToSlide.firstElementChild.classList.add("item--visibleRight");
         jumpToSlide.lastElementChild.classList.add("item--visibleLeft");
+        if (screenWidth < 426) {
+          jumpToSlide.parentElement.style.height = jumpToSlide.offsetHeight + "px";
+          jumpToSlide.parentElement.style.minHeight = jumpToSlide.offsetHeight + "px";
+        }
       }, 750);
     }
   });
@@ -235,7 +258,7 @@ preBtnB.addEventListener("click", () => {
 });
 
 //-->create circles
-//create n number of circles based on number of slides in the slider
+//this creates n number of circles based on number of slides in the slider
 //choosing javascript to add these elements because number of slides could be dynamic
 //adding click control to the elements
 
@@ -268,6 +291,10 @@ for (let i = 0; i < sliderBItems.length; i++) {
       jumpToSlide.classList.add("item--visible");
       jumpToSlide.firstElementChild.classList.add("item--visibleRight");
       jumpToSlide.lastElementChild.classList.add("item--visibleLeft");
+      if (screenWidth < 426) {
+        jumpToSlide.parentElement.style.height = jumpToSlide.offsetHeight + "px";
+        jumpToSlide.parentElement.style.minHeight = jumpToSlide.offsetHeight + "px";
+      }
     }, 750);
   });
   sliderCirclesContainer.append(circleDiv);
@@ -451,12 +478,12 @@ const sencorVideoSlider = document.querySelector("#celek .video__thumbnails");
 let sencorVideoSliderStyle = getComputedStyle(sencorVideoSlider);
 let sencorVideoSliderGap = Number(sencorVideoSliderStyle.gap.replace("px", ""));
 
-if(screenWidth > 425) {
-window.addEventListener("load", (event) => {
-  const sencorVideoSliderHeight = videoThumbnails[0].offsetHeight * 4 + sencorVideoSliderGap * 3;
-  sencorVideoSlider.style.height = sencorVideoSliderHeight + "px";
-});
-} else sencorVideoSlider.style.height = 344 + 'px'
+if (screenWidth > 425) {
+  window.addEventListener("load", (event) => {
+    const sencorVideoSliderHeight = videoThumbnails[0].offsetHeight * 4 + sencorVideoSliderGap * 3;
+    sencorVideoSlider.style.height = sencorVideoSliderHeight + "px";
+  });
+} else sencorVideoSlider.style.height = 344 + "px";
 
 //video slider scrolling
 
